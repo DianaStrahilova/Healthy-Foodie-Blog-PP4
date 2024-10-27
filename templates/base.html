@@ -29,11 +29,11 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                     href="{% url 'home' %}">Home</i></a>
+                        href="{% url 'home' %}">Home</i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == recipes_url %}active{% endif %}" aria-current="page"
-                     href="{% url 'recipes' %}">Blog</a>
+                        href="{% url 'recipes' %}">Blog</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
@@ -55,10 +55,17 @@
         </div>
     </nav>
 
-    <main>
+    <main class="flex-shrink-0 main-bg">
+        {% if user.is_authenticated %}
+        <p class="text-end m-3">You are logged in as {{ user.username }}</p>
+        {% else %}
+        <p class="text-end m-3">You are not logged in</p>
+        {% endif %}
 
         {% block content %}
-        {% endblock %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+
 
     </main>
 
