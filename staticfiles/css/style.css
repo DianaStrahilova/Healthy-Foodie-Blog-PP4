@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+body {
+    font-family: "Roboto Mono", sans-serif;
+    background: url(./images/home.jpg);
+}
+
+.logo {
+    font-size: 2rem;
+    margin-left: 10px;
+}
+
+.lead {
+    padding: 10px;
+    line-height: 2.5rem;
+}
+
+.navbar {
+    background-color: rgba(225, 225, 225);
+    font-size: 1.5rem;
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.jumbotron {
+    background-color: rgba(225, 225, 225, 0.7);
+    position: sticky;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+footer {
+    background-color: rgba(225, 225, 225);
+    position: absolute;
+    bottom: 0;
+
+}
+
+footer h5 {
+    margin: 10px 0 10px;
+}
+
+.social-links li a i {
+    font-size: 40px;
+    letter-spacing: 2.5rem;
+    color: tomato;
+}
