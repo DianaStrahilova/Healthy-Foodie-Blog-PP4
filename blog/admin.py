@@ -3,14 +3,15 @@ from django_summernote.admin import SummernoteModelAdmin
 from .models import Recipe
 
 @admin.register(Recipe)
-class RecipeAdmin(admin.ModelAdmin):
+class RecipeAdmin(SummernoteModelAdmin):
     list_display = (
         'title',
         'calories',
-        'instructions',
+        # 'instructions',
         'ingredients',
         'image'
     )
+    summernote_fields = ('instructions')
 
 
 

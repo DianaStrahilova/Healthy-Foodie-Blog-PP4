@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 body {
-    font-family: "Roboto Mono", sans-serif;
-    background: url(./images/home.jpg);
+    font-family: "Roboto Mono", sans-serif; 
 }
 
 .logo {
@@ -17,33 +16,39 @@ body {
 
 .navbar {
     background-color: rgba(225, 225, 225);
-    font-size: 1.5rem;
+    /* font-size: 1rem; */
 }
 
 .navbar-brand {
     font-weight: 700;
 }
 
+
 .jumbotron {
     background-color: rgba(225, 225, 225, 0.7);
     position: sticky;
     font-weight: 500;
     font-size: 1.5rem;
+    color: pink;
 }
 
 footer {
     background-color: rgba(225, 225, 225);
-    position: absolute;
     bottom: 0;
-
+    position: absolute;
+    flex-shrink: 0;
+    width: 100vw;
 }
 
-footer h5 {
-    margin: 10px 0 10px;
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-.social-links li a i {
-    font-size: 40px;
-    letter-spacing: 2.5rem;
-    color: tomato;
+.social-icon {
+    height: 2rem;
+    margin: 1rem;
 }
+
