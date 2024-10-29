@@ -1,3 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h5>Recipes</h5>
 
-
+{% for recipe in recipe_list %}
+{{recipe.title}}
+{{recipe.description}}
+{{recipe.user}}
+{{recipe.created_on}}
+{{recipe.image}}
+{% endfor %}
+{% endblock %}

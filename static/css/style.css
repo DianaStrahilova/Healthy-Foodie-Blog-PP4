@@ -2,7 +2,7 @@
 
 body {
     font-family: "Roboto Mono", sans-serif; 
-    background: url(/static/images/home.jpg) no-repeat;
+    /* background: url(/static/images/home.jpg) no-repeat; */
 }
 
 .logo {

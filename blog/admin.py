@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Recipe
+from .models import Recipe, Comment
 
 @admin.register(Recipe)
 class RecipeAdmin(SummernoteModelAdmin):
@@ -12,6 +12,9 @@ class RecipeAdmin(SummernoteModelAdmin):
         'image'
     )
     summernote_fields = ('instructions')
+
+
+admin.site.register(Comment)
 
 
 
