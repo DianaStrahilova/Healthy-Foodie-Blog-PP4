@@ -6,12 +6,17 @@ from .models import Recipe, Comment
 class RecipeAdmin(SummernoteModelAdmin):
     list_display = (
         'title',
+        'slug',
         'calories',
-        # 'instructions',
         'ingredients',
-        'image'
+        "image",
+        'created_on'
     )
+    search_fields = ['title']
+    list_filter = ('created_on', )
+    prepopulated_fields = {"slug": ("title",)}
     summernote_fields = ('instructions')
+   
 
 
 admin.site.register(Comment)
