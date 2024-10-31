@@ -27,8 +27,6 @@ class RecipeDetail(DetailView):
     model = Recipe
 
 
-
-
 class AddRecipe(LoginRequiredMixin, CreateView):
     template_name = 'blog/add_recipe.html'
     model = Recipe
