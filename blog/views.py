@@ -17,6 +17,7 @@ class RecipeView(ListView):
     queryset = Recipe.objects.all()
     template_name = 'blog/recipes.html' 
     context_object_name = 'recipes'
+    paginate_by = 4
 
 
 class RecipeDetail(DetailView):

@@ -36,6 +36,13 @@ body {
     color: pink;
 }
 
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+
 .icons {
     display: flex;
     flex-direction: row;
@@ -53,7 +60,7 @@ body {
     align-items: center;
     width: 80%;
     margin-bottom: 40px;
-   
+
 }
 
 footer {
@@ -61,9 +68,21 @@ footer {
     /* position: absolute;
     bottom: 0;
     width: 100%; */
-/* 
+    /* 
     height: fit-content;
     flex-shrink: 0;
     position: sticky; */
 }
 
+
+.card {
+    margin-top: 1rem;
+}
+
+.image-flash {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    left: -2px;
+    background-color: #188181;
+}
