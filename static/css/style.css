@@ -114,3 +114,7 @@ footer {
 .instructions {
     text-align: left;
 }
+
+.active {
+    background-color: tomato;
+}
