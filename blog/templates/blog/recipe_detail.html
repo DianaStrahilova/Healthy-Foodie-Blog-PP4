@@ -2,32 +2,33 @@
 {% load static %}
 
 {% block content %}
-
-<div class="row text-center">
-    <div class="col-md-7 recipe-container">
-        <h3>{{ recipe.title }}</h3>
-        <p>Created By: <span>{{ recipe.author }} | {{ recipe.created_on }}</span></p>
-        <hr>
-        <h5>Description</h5>
-        <p>{{ recipe.description }}</p>
-        <p class="p-3"><strong>Calories:</strong>{{ recipe.calories }} | per 100g</p>
-        <div class="recipe-container">
-            <div class="ingredients p-3">
-                <h5>Ingredients</h5>
-                <p>{{ recipe.ingredients|safe }}</p>
-            </div>
-            <div class="instructions p-3">
-                <h5>Instructions</h5>
-                <p>{{ recipe.instructions|safe }}</p>
+<div class="container-md">
+    <div class="row text-center">
+        <div class="col-md-7 recipe-container">
+            <h3>{{ recipe.title }}</h3>
+            <p>Created By: <span>{{ recipe.author }} | {{ recipe.created_on }}</span></p>
+            <hr>
+            <h5>Description</h5>
+            <p>{{ recipe.description }}</p>
+            <p class="p-3"><strong>Calories:</strong>{{ recipe.calories }} | per serving</p>
+            <div>
+                <div class="ingredients p-3 text-left">
+                    <h5>Ingredients</h5>
+                    <p>{{ recipe.ingredients|safe }}</p>
+                </div>
+                <div class="instructions p-3">
+                    <h5 class="text-center">Instructions</h5>
+                    <p>{{ recipe.instructions|safe }}</p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-5 mt-3">
-        {% if "placeholder" in recipe.image.url %}
-        <img class="recipe-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
-        {% else %}
-        <img class="recipe-image" src=" {{ recipe.image.url }}" alt="{{ recipe.image_alt }}">
-        {% endif %}
+        <div class="col-md-5 mt-3">
+            {% if "placeholder" in recipe.image.url %}
+            <img class="recipe-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
+            {% else %}
+            <img class="recipe-image" src=" {{ recipe.image.url }}" alt="{{ recipe.image_alt }}">
+            {% endif %}
+        </div>
     </div>
 </div>
 

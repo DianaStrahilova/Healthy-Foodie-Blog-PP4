@@ -84,6 +84,11 @@ footer {
     margin-top: 1rem;
 }
 
+.detail-link {
+    text-decoration: none;
+    color: tomato;
+}
+
 .recipe-image {
     height: 80%;
     width: 80%;
@@ -91,6 +96,21 @@ footer {
 
 }
 
+.recipe-container h5 {
+    text-decoration: underline tomato;
+}
+
+.recipe-container {
+    border: 10px solid tomato;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+
 .ingredients ul {
     list-style-type: none;
+}
+
+.instructions {
+    text-align: left;
 }
