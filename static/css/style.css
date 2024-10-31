@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 body {
-    font-family: "Roboto Mono", sans-serif; 
+    font-family: "Roboto Mono", sans-serif;
     /* background: url(/static/images/home.jpg) no-repeat; */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .logo {
@@ -33,14 +36,6 @@ body {
     color: pink;
 }
 
-footer {
-    background-color: rgba(225, 225, 225, 0.7);
-    bottom: 0;
-    position: absolute;
-    flex-shrink: 0;
-    width: 100vw;
-}
-
 .icons {
     display: flex;
     flex-direction: row;
@@ -51,5 +46,24 @@ footer {
 .social-icon {
     height: 2rem;
     margin: 1rem;
+}
+
+
+.form {
+    align-items: center;
+    width: 80%;
+    margin-bottom: 40px;
+   
+}
+
+footer {
+    background-color: rgba(225, 225, 225, 0.7);
+    /* position: absolute;
+    bottom: 0;
+    width: 100%; */
+/* 
+    height: fit-content;
+    flex-shrink: 0;
+    position: sticky; */
 }
 

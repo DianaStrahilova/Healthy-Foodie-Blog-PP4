@@ -3,9 +3,18 @@
 {% block content %}
 
 <h3>Recipes</h3>
-{% for recipe in recipe_list %}
+{% for recipe in recipes %}
 
-<a href="{% url 'recipe' slug=recipe.slug %}">{{ recipe.title }}</a>
+<a href="{% url 'recipe' recipe.id %}">{{recipe.title}}</a>
+
+
+
+
+
+
+
+
+
 
 {{recipe.description}}
 {{recipe.author}}

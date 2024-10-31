@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.urls import reverse
-
+from djrichtextfield.models import RichTextField
 
 
 
@@ -16,15 +16,12 @@ class Recipe(models.Model):
         def __str__(self):
             return f"{self.title} | {self.author}"
 
-    # def get_absolute_url(self):
-    #         return reverse("recipe_detail", kwargs={"slug": self.slug})
 
     author = models.ForeignKey(User, related_name="recipe_owner", on_delete=models.CASCADE)
-    title = models.CharField(max_length=200, null=False, blank=False)
-    slug = models.SlugField(max_length=200, unique=True)
+    title = models.CharField(max_length=200, unique=True)
     description = models.CharField(max_length=500, null=False, blank=False)
-    ingredients = models.TextField()
-    instructions = models.TextField()
+    ingredients = RichTextField(max_length=10000, null=False, blank=False)
+    instructions = RichTextField(max_length=10000, null=False, blank=False)
     image = CloudinaryField('image', default='placeholder')
     image_alt = models.CharField(max_length=100, blank=False, null=False)
     calories = models.IntegerField()

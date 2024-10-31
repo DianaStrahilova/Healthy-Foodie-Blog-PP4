@@ -1,7 +1,9 @@
-from django.views.generic import TemplateView, ListView
-from .models import Recipe
+from django.views.generic import TemplateView, ListView, CreateView, DetailView
+from .models import Recipe, Comment
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import RecipeForm
 
 
 
@@ -10,16 +12,31 @@ from django.views import generic
 class Index(TemplateView):
     template_name = 'blog/index.html'
 
-class RecipeView(generic.ListView):
+class RecipeView(ListView):
     # model = Recipe
     queryset = Recipe.objects.all()
     template_name = 'blog/recipes.html' 
+    context_object_name = 'recipes'
 
-# def recipe_list(request):
-#     queryset = Recipe.objects.all()
-#     # recipes = Recipe.objects.all()
-#     return render(request, 'blog/recipes.html')
 
-def recipe_detail(request, slug):
-    recipe = Recipe.objects.get(slug=slug)
-    return render(request, 'blog/recipe_detail.html', {'recipe': recipe})
+class RecipeDetail(DetailView):
+    """View a single recipe"""
+
+    template_name = "blog/recipe_detail.html"
+    model = Recipe
+
+
+
+
+class AddRecipe(LoginRequiredMixin, CreateView):
+    template_name = 'blog/add_recipe.html'
+    model = Recipe
+    form_class = RecipeForm
+    success_url = '/recipes/'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super(AddRecipe, self).form_valid(form)
+
+
+
