@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block content %}
 <div class="container-fluid container-md">
     <div class="row">
@@ -9,6 +8,7 @@
         <div class="col-12 col-sm-6mt-3 left">
             <div class="row">
                 {% for recipe in recipes %}
+                {% if recipe.approved %}
                 <div class="col-12 col-md-4 col-sm-6">
                     <div class="card mb-4">
                         <div class="card-body">
@@ -20,7 +20,7 @@
                                 <img class="card-img-top" src=" {{ recipe.image.url }}" alt="{{ recipe.image_alt }}">
                                 {% endif %}
                             </div>
-                            <a href="{% url 'recipe' recipe.id %}" class="detail-link">
+                            <a href="{% url 'recipe' recipe.slug %}" class="detail-link">
                                 <h2 class="card-title">{{ recipe.title }}</h2>
                             </a>
                             <hr />
@@ -30,6 +30,7 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
                 {% if forloop.counter|divisibleby:6 %}
             </div>
             <div class="row">

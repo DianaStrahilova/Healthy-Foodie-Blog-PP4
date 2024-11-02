@@ -1,6 +1,6 @@
 from django import forms
 from djrichtextfield.widgets import RichTextWidget
-from .models import Recipe
+from .models import Recipe, Comment
 
 
 class RecipeForm(forms.ModelForm):
@@ -27,3 +27,10 @@ class RecipeForm(forms.ModelForm):
             'image': 'Image',
             'image_alt': 'Describe Image'
         }
+
+
+class CommentForm(forms.ModelForm):
+    """ Form to create a comment """
+    class Meta:
+        model = Comment
+        fields = ('body',)
