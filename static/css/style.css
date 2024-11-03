@@ -118,3 +118,18 @@ footer {
 .active {
     background-color: tomato;
 }
+
+div.scroll {
+    margin: 4px, 4px;
+    padding: 4px;
+    background-color: tomato;
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0 auto;
+}
+
+div.card {
+    width: 80%;
+}
+

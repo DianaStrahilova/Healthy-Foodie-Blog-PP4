@@ -15,7 +15,7 @@ class Recipe(models.Model):
         return f"{self.title} | {self.author}"
     
     def get_absolute_url(self):
-        return reverse("recipe", args=[str(self.id)])
+        return reverse("recipe", kwargs={"slug": self.slug})
 
 
     author = models.ForeignKey(User, related_name="recipe_owner", on_delete=models.CASCADE)

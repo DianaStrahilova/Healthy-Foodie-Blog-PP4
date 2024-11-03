@@ -3,9 +3,9 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container-md">
-    <div class="row text-center">
-        <div class="col-md-7 recipe-container">
+<div class="container-fluid">
+    <div class="row text-center container-fluid">
+        <div class="col-md-7">
             <h3>{{ recipe.title }}</h3>
             <p>Created By: <span>{{ recipe.author }} | {{ recipe.created_on }}</span></p>
             <hr>
@@ -27,23 +27,76 @@
             {% if "placeholder" in recipe.image.url %}
             <img class="recipe-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
             {% else %}
-            <img class="recipe-image" src=" {{ recipe.image.url }}" alt="{{ recipe.image_alt }}">
+            <img class="recipe-image" src=" {{ recipe.image.url }}" alt="{{ recipe.title }}">
             {% endif %}
         </div>
     </div>
+    <div class="row">
+        <div class="col-12">
+            <strong class="text-secondary">
+                <i class="fa-solid fa-comment" style="color: #B197FC;"></i> {{ comment_count }}
+            </strong>
+        </div>
+    </div>
 </div>
+<hr>
 
-<!-- <div class="recipe-container">
-    <div class="ingredients p-3">
-        <h2>Ingredients</h2>
-        <p>{{ recipe.ingredients|safe }}</p>
-    </div>
-    <div class="instructions p-3">
-        <h2>Instructions</h2>
-        <p>{{ recipe.instructions|safe }}</p>
+<div class="container-fluid">
+    <div class="row {% if user.is_authenticated == False %} d-none{% endif%}">
+        <h4 class="mb-2">Recent comments</h4>
+        <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
+        <div class="col-md-12 col-lg-6 mb-2 scroll">
+            {% for comment in comments %}
+            <div class="card text-body mx-auto">
+                <div class="card-body p-4">
+
+                    <h6 class="fw-bold mb-1">{{comment.author}}</h6>
+                    <div class="d-flex align-items-center mb-3">
+                        <p class="mb-0">
+                            {{comment.created_on}}
+                            {% if not comment.approved and comment.author == user %}
+                            <span class="badge bg-primary">Pending</span>
+                            {% elif comment.approved == True%}
+                            <span class="badge bg-success">Approved</span>
+
+                            {% endif %}
+                        </p>
+                    </div>
+                    <p class="mb-0">
+                        {{ comment.body|linebreaks }}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+
+        <div class="col-md-12 col-lg-6 mb-2">
+            <div class="card text-body mx-auto">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="mb-0">
+                            <h5>Add a comment</h5>
+                            <div data-mdb-input-init class="form-outline">
+                                <form class="form-control" method="post" id="textAreaExample" rows="4">
+                                    {% csrf_token %}
+                                    {{ comment_form | crispy}}
+                                    <button type="submit" data-mdb-button-init data-mdb-ripple-init
+                                        class="btn btn-success">Submit</button>
+                                </form>
+                            </div>
+                            <div class="d-flex justify-content-between mt-3">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
-</div> -->
 
 
 
