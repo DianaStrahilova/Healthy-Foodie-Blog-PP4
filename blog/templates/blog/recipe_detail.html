@@ -9,10 +9,10 @@
             <h3>{{ recipe.title }}</h3>
             <p>Created By: <span>{{ recipe.author }} | {{ recipe.created_on }}</span></p>
             <p class="{% if recipe.author != user %} d-none{% endif%}">
-                <!-- <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                <button class="btn btn-success btn-sm rounded-0 btn-edit" type="button" data-toggle="tooltip"
                     data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
-                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top"
-                    title="Delete"><i class="fa fa-trash"></i></button> -->
+                <button class="btn btn-danger btn-sm rounded-0 btn-delete" type="button" data-toggle="tooltip" data-placement="top"
+                    title="Delete"><i class="fa fa-trash"></i></button>
             </p>
             <hr>
             <h5>Description</h5>
