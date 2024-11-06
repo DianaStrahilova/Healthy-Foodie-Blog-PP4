@@ -2,7 +2,6 @@ const editButtons = document.getElementsByClassName("btn-edit");
 const commentText = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");
 const submitButton = document.getElementById("submitButton");
-const recipeForm = document.getElementById("recipeForm")
 
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
@@ -21,13 +20,10 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 for (let button of editButtons) {
     button.addEventListener("click", (e) => {
         let commentId = e.target.getAttribute("comment_id");
-        let recipeId = e.target.getAttribute("recipe_id");
         let commentContent = document.getElementById(`comment${commentId}`).innerText;
-        let recipeForm = document.getElementById(`recipe${recipeId}`).innerText
         commentText.value = commentContent;
         submitButton.innerText = "Update";
         commentForm.setAttribute("action", `edit_comment/${commentId}`);
-        recipeForm.setAttribute("action", `edit_recipe/${recipeId}`);
     });
 }
 
