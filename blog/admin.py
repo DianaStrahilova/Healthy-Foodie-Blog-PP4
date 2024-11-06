@@ -6,14 +6,13 @@ from .models import Recipe, Comment
 class RecipeAdmin(SummernoteModelAdmin):
     list_display = (
         'title',
-        'calories',
-        'ingredients',
+        'slug',
+        'status',
         'created_on',
-        'updated_on',
     )
     prepopulated_fields = {"slug": ("title",)} 
     search_fields = ['title']
-    list_filter = ['created_on']
+    list_filter = ['status','created_on']
     summernote_fields = ('instructions', 'ingredients')
    
 

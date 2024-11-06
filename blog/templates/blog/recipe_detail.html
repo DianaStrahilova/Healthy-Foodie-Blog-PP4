@@ -8,6 +8,12 @@
         <div class="col-md-7">
             <h3>{{ recipe.title }}</h3>
             <p>Created By: <span>{{ recipe.author }} | {{ recipe.created_on }}</span></p>
+            <p class="{% if recipe.author != user %} d-none{% endif%}">
+                <!-- <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                    data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
+                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top"
+                    title="Delete"><i class="fa fa-trash"></i></button> -->
+            </p>
             <hr>
             <h5>Description</h5>
             <p>{{ recipe.description }}</p>
@@ -34,7 +40,7 @@
     <div class="row">
         <div class="col-12">
             <strong class="text-secondary">
-                <i class="fa-solid fa-comment" style="color: #B197FC;"></i> {{ comment_count }}
+                <i class="fa-solid fa-comments"></i> {{ comment_count }}
             </strong>
         </div>
     </div>
@@ -47,47 +53,49 @@
         <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
         <div class="col-md-12 col-lg-6 mb-2 scroll">
             {% for comment in comments %}
-            <div class="card text-body mx-auto">
+            <div class="card text-body mx-auto {% if not comment.approved and comment.author != user %} d-none{% endif %}">
+                
                 <div class="card-body p-4">
-
                     <h6 class="fw-bold mb-1">{{comment.author}}</h6>
                     <div class="d-flex align-items-center mb-3">
-                        <p class="mb-0">
-                            {{comment.created_on}}
+                        <p class="mb-0 space-between">
+                            <span>{{comment.created_on}}</span>
                             {% if not comment.approved and comment.author == user %}
-                            <span class="badge bg-primary">Pending</span>
-                            {% elif comment.approved == True%}
-                            <span class="badge bg-success">Approved</span>
-
+                            <p class="badge">
+                                <span class="badge bg-primary">Pending</span>
+                            </p>
                             {% endif %}
+                            <p class="{% if comment.author != user %} d-none{% endif%}">
+                                <button comment_id="{{ comment.id }}" class="btn-edit btn btn-success btn-sm rounded-0"
+                                    type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
+                                        class="fa fa-edit"></i></button>
+                                <button comment_id="{{ comment.id }}" class=" btn-delete btn btn-danger btn-sm rounded-0"
+                                    type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
+                                        class="fa fa-trash"></i></button>
+                            </p>
                         </p>
                     </div>
-                    <p class="mb-0">
+                    <div id="comment{{ comment.id }}">
                         {{ comment.body|linebreaks }}
-                    </p>
+                    </div>
                 </div>
             </div>
             {% endfor %}
         </div>
 
-
-
         <div class="col-md-12 col-lg-6 mb-2">
-            <div class="card text-body mx-auto">
-                <div class="card-body p-4">
+            <div class="card text-body mx-auto mt-auto">
+                <div class="card-body">
                     <div class="d-flex align-items-center mb-3">
                         <div class="mb-0">
-                            <h5>Add a comment</h5>
-                            <div data-mdb-input-init class="form-outline">
-                                <form class="form-control" method="post" id="textAreaExample" rows="4">
+                            <h5>Add a comment <i class="fa-solid fa-comment inline"></i></h5>
+                            <div class="form-group">
+                                <form id="commentForm" class="form-group" method="post">
                                     {% csrf_token %}
                                     {{ comment_form | crispy}}
-                                    <button type="submit" data-mdb-button-init data-mdb-ripple-init
+                                    <button id="submitButton" data-mdb-button-init data-mdb-ripple-init
                                         class="btn btn-success">Submit</button>
                                 </form>
-                            </div>
-                            <div class="d-flex justify-content-between mt-3">
-
                             </div>
                         </div>
                     </div>
@@ -98,8 +106,26 @@
     </div>
 </div>
 
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete Comment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your comment?
+                This action is permanent.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
 
-
-
-
+{% endblock %}
+{% block extras %}
+<script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}

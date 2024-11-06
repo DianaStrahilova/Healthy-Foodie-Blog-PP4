@@ -2,7 +2,6 @@
 
 body {
     font-family: "Roboto Mono", sans-serif;
-    /* background: url(/static/images/home.jpg) no-repeat; */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -29,6 +28,7 @@ body {
 
 
 .jumbotron {
+    font-family: "Poppins", sans-serif;
     background-color: rgba(225, 225, 225, 0.7);
     position: sticky;
     font-weight: 500;
@@ -56,11 +56,10 @@ body {
 }
 
 
-.form {
-    align-items: center;
-    width: 80%;
-    margin-bottom: 40px;
-
+ .recipeForm {
+   background-color: #FFFF80;
+    width: 50%;
+    margin-bottom: 70px;
 }
 
 /* .recipe-container {
@@ -68,8 +67,8 @@ body {
     flex-direction: column;
 } */
 
-footer {
-    background-color: rgba(225, 225, 225, 0.7);
+footer, .navbar {
+    background-color: #FFFF80;
     /* position: absolute;
     bottom: 0;
     width: 100%; */
@@ -116,13 +115,14 @@ footer {
 }
 
 .active {
-    background-color: tomato;
+    background-color: #FFD700;
+    border-radius: 10px;
 }
 
 div.scroll {
     margin: 4px, 4px;
     padding: 4px;
-    background-color: tomato;
+    background-color: transparent tomato;
     height: 300px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -133,3 +133,22 @@ div.card {
     width: 80%;
 }
 
+
+textarea.form-control {
+    height: 100px;
+}
+
+
+p .badge {
+    margin-left: 1rem;
+}
+
+
+
+
+
+@media only screen and (max-width: 575px) {
+    .div card {
+        height: 80%;
+    }
+  }

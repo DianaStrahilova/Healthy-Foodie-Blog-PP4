@@ -1,5 +1,4 @@
 from django import forms
-from djrichtextfield.widgets import RichTextWidget
 from .models import Recipe, Comment
 
 
@@ -8,19 +7,20 @@ class RecipeForm(forms.ModelForm):
 
     class Meta:
         model = Recipe
-        fields = ['title', 'description', 'ingredients', 'instructions', 'calories', 'image']
+        fields = ['title', 'slug', 'ingredients', 'instructions', 'calories', 'image']
 
-        ingredients = forms.CharField(widget=RichTextWidget())
-        instructions = forms.CharField(widget=RichTextWidget())
+        ingredients = forms.CharField()
+        instructions = forms.CharField()
+        
 
-        widget = {
-            "description": forms.Textarea(attrs={"rows": 5}),
-        }
+        # widget = {
+        #     "description": forms.Textarea(attrs={"rows": 5}),
+        # }
 
 
         labels = {
             'title': 'Recipe Title',
-            'description': 'Description',
+            'slug': 'Description',
             'ingredients': 'Ingredients',
             'instructions': 'Instructions',
             'calories': 'Calories',
@@ -34,3 +34,7 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body',)
+
+        labels = {
+            'body': 'Comment'
+        }
