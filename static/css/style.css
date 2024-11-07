@@ -69,19 +69,8 @@ body {
 
 footer, .navbar {
     background-color: #FFFF80;
-    /* position: absolute;
-    bottom: 0;
-    width: 100%; */
-    /* 
-    height: fit-content;
-    flex-shrink: 0;
-    position: sticky; */
 }
 
-
-.card {
-    margin-top: 1rem;
-}
 
 .detail-link {
     text-decoration: none;
@@ -148,7 +137,8 @@ p .badge {
 
 
 @media only screen and (max-width: 575px) {
-    .div card {
-        height: 80%;
+    div .image-container img {
+        height: 300px;
+
     }
-  }
+}

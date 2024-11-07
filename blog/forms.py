@@ -8,14 +8,11 @@ class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
         fields = ['title', 'slug', 'ingredients', 'instructions', 'calories', 'image']
+        
 
         ingredients = forms.CharField()
         instructions = forms.CharField()
         
-
-        # widget = {
-        #     "description": forms.Textarea(attrs={"rows": 5}),
-        # }
 
 
         labels = {

@@ -1,8 +1,8 @@
-from django.views.generic import TemplateView, ListView, CreateView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
 from .models import Recipe, Comment
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
-from django.views.generic.edit import FormMixin 
+from django.views.generic.edit import FormMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from .forms import RecipeForm, CommentForm
@@ -88,7 +88,6 @@ def comment_edit(request, slug, comment_id):
     return HttpResponseRedirect(reverse('recipe', args=[slug]))
 
 
-
 def comment_delete(request, slug, comment_id):
     """
     view to delete comment
@@ -104,15 +103,6 @@ def comment_delete(request, slug, comment_id):
 
 
 
-
-
-
-
-
-
-
-
-
 class AddRecipe(LoginRequiredMixin, CreateView):
     template_name = 'blog/add_recipe.html'
     model = Recipe
@@ -123,6 +113,22 @@ class AddRecipe(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         return super(AddRecipe, self).form_valid(form)
 
+
+
+class EditRecipe(UpdateView):
+    """ Edit a recipe """
+    template_name = 'blog/edit_recipe.html'
+    model = Recipe
+    form_class = RecipeForm
+    success_url = '/recipes/'
+
+
+class DeleteRecipe(DeleteView):
+    template_name = 'blog/delete_recipe.html'
+    model = Recipe
+    success_url = '/recipes/'
+
+    
 
 
         

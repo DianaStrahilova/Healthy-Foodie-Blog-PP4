@@ -11,7 +11,7 @@
                 {% for recipe in recipes %}
                 {% if recipe.approved %}
                 <div class="col-12 col-md-4 col-sm-6 d-flex justify-content-center">
-                    <div class="card mb-4">
+                    <div class="card mb-4 mt-4 text-center">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in recipe.image.url %}
@@ -22,11 +22,11 @@
                                 {% endif %}
                             </div>
                             <a href="{% url 'recipe' recipe.slug %}" class="detail-link">
-                                <h2 class="card-title">{{ recipe.title }}</h2>
+                                <h4 class="card-title">{{ recipe.title }}</h4>
                             </a>
                             <hr />
                             <p class="card-text">{{ recipe.author }}</p>
-                            <p class="card-text text-muted h6">{{ recipe.created_on }}
+                            <p class="card-text text-muted h6">Last updated on {{ recipe.updated_on }}
                             </p>
                         </div>
                     </div>

@@ -9,10 +9,11 @@
             <h3>{{ recipe.title }}</h3>
             <p>Created By: <span>{{ recipe.author }} | {{ recipe.created_on }}</span></p>
             <p class="{% if recipe.author != user %} d-none{% endif%}">
-                <button class="btn btn-success btn-sm rounded-0 btn-edit" type="button" data-toggle="tooltip"
-                    data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
-                <button class="btn btn-danger btn-sm rounded-0 btn-delete" type="button" data-toggle="tooltip" data-placement="top"
-                    title="Delete"><i class="fa fa-trash"></i></button>
+                <a href="{% url 'edit_recipe' recipe.slug %}" class="btn btn-success btn-sm rounded-0" type="button"
+                    data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-danger btn-sm rounded-0"
+                    type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
+                        class="fa fa-trash"></i></a>
             </p>
             <hr>
             <h5>Description</h5>
@@ -53,8 +54,9 @@
         <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
         <div class="col-md-12 col-lg-6 mb-2 scroll">
             {% for comment in comments %}
-            <div class="card text-body mx-auto {% if not comment.approved and comment.author != user %} d-none{% endif %}">
-                
+            <div
+                class="card text-body mx-auto {% if not comment.approved and comment.author != user %} d-none{% endif %}">
+
                 <div class="card-body p-4">
                     <h6 class="fw-bold mb-1">{{comment.author}}</h6>
                     <div class="d-flex align-items-center mb-3">
@@ -69,8 +71,9 @@
                                 <button comment_id="{{ comment.id }}" class="btn-edit btn btn-success btn-sm rounded-0"
                                     type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
                                         class="fa fa-edit"></i></button>
-                                <button comment_id="{{ comment.id }}" class=" btn-delete btn btn-danger btn-sm rounded-0"
-                                    type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
+                                <button comment_id="{{ comment.id }}"
+                                    class=" btn-delete btn btn-danger btn-sm rounded-0" type="button"
+                                    data-toggle="tooltip" data-placement="top" title="Delete"><i
                                         class="fa fa-trash"></i></button>
                             </p>
                         </p>

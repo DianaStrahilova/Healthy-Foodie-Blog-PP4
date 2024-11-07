@@ -14,8 +14,8 @@ class Recipe(models.Model):
     def __str__(self):
         return f"{self.title} | {self.author}"
     
-    def get_absolute_url(self):
-        return reverse("recipe", kwargs={"slug": self.slug})
+    # def get_absolute_url(self):
+    #     return reverse("recipe", kwargs={"slug": self.slug})
 
 
     author = models.ForeignKey(User, related_name="recipe_owner", on_delete=models.CASCADE)

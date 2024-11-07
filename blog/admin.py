@@ -9,6 +9,7 @@ class RecipeAdmin(SummernoteModelAdmin):
         'slug',
         'status',
         'created_on',
+        'updated_on',
     )
     prepopulated_fields = {"slug": ("title",)} 
     search_fields = ['title']
