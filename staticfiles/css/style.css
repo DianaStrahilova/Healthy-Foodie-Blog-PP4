@@ -7,6 +7,19 @@ body {
     flex-direction: column;
 }
 
+.background {
+    background: url(/static/images/favpng_fork-kitchen-utensil-tool.png) no-repeat center center fixed;
+    background-size: cover;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navbar */
+.active {
+    background-color: #FFD700;
+    border-radius: 10px;
+}
+
 .logo {
     font-size: 2rem;
     margin-left: 10px;
@@ -17,60 +30,40 @@ body {
     line-height: 2.5rem;
 }
 
-.navbar {
-    background-color: rgba(225, 225, 225);
-    /* font-size: 1rem; */
-}
-
 .navbar-brand {
     font-weight: 700;
 }
 
 
-.jumbotron {
+/* Home Page */
+.intro {
     font-family: "Poppins", sans-serif;
-    background-color: rgba(225, 225, 225, 0.7);
-    position: sticky;
-    font-weight: 500;
     font-size: 1.5rem;
-    color: pink;
+    border: 3px solid tomato;
+    border-radius: 12px;
 }
 
+.opacity {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* Buttons */
+.styledButton {
+    background-color: tomato;
+}
+
+.styledButton:hover {
+    background-color: #FFD700;
+    color: black;
+}
+
+/* Recipe List */
 .card-img-top {
     width: 100%;
     height: 15vw;
     object-fit: cover;
 }
-
-
-.icons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.social-icon {
-    height: 2rem;
-    margin: 1rem;
-}
-
-
- .recipeForm {
-   background-color: #FFFF80;
-    width: 50%;
-    margin-bottom: 70px;
-}
-
-/* .recipe-container {
-    display: flex;
-    flex-direction: column;
-} */
-
-footer, .navbar {
-    background-color: #FFFF80;
-}
-
 
 .detail-link {
     text-decoration: none;
@@ -84,17 +77,15 @@ footer, .navbar {
 
 }
 
-.recipe-container h5 {
-    text-decoration: underline tomato;
-}
+/* Add Recipe Page */
+.recipeForm {
+    background-color: #FFFF80;
+    width: 80%;
 
-.recipe-container {
-    border: 10px solid tomato;
-    border-radius: 10px;
-    margin-bottom: 30px;
 }
 
 
+/* Recipe Detail */
 .ingredients ul {
     list-style-type: none;
 }
@@ -103,9 +94,15 @@ footer, .navbar {
     text-align: left;
 }
 
-.active {
-    background-color: #FFD700;
-    border-radius: 10px;
+div.card {
+    width: 80%;
+}
+
+/* Comment Section */
+
+.scroll,
+.commentCard {
+    background-color: #FFFF80
 }
 
 div.scroll {
@@ -118,27 +115,55 @@ div.scroll {
     margin: 0 auto;
 }
 
-div.card {
-    width: 80%;
-}
-
-
 textarea.form-control {
     height: 100px;
 }
-
 
 p .badge {
     margin-left: 1rem;
 }
 
+/* Footer */
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icon {
+    height: 2rem;
+    margin: 1rem;
+}
+
+footer,
+.navbar {
+    background-color: #FFFF80;
+}
 
 
 
 
-@media only screen and (max-width: 575px) {
+/* Media queries */
+@media only screen and (max-width: 770px) {
     div .image-container img {
         height: 300px;
-
     }
+
+    div .card {
+        width: 90%;
+    }
+
+    .recipeForm {
+        width: 90%;
+    }
+
+    .background {
+        height: fit-content;
+    }
+
+    /* .optionButtons .btn {
+        padding: 5px;
+        
+    } */
 }

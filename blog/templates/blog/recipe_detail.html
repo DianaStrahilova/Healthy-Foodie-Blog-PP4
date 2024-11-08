@@ -3,17 +3,16 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="row text-center container-fluid">
+<div class="container-fluid opacity">
+    <div class="row text-center container-fluid opacity">
         <div class="col-md-7">
             <h3>{{ recipe.title }}</h3>
             <p>Created By: <span>{{ recipe.author }} | {{ recipe.created_on }}</span></p>
             <p class="{% if recipe.author != user %} d-none{% endif%}">
                 <a href="{% url 'edit_recipe' recipe.slug %}" class="btn btn-success btn-sm rounded-0" type="button"
                     data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
-                <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-danger btn-sm rounded-0"
-                    type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
-                        class="fa fa-trash"></i></a>
+                <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-danger btn-sm rounded-0" type="button"
+                    data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
             </p>
             <hr>
             <h5>Description</h5>
@@ -48,15 +47,13 @@
 </div>
 <hr>
 
-<div class="container-fluid">
+<div class="container-fluid opacity">
     <div class="row {% if user.is_authenticated == False %} d-none{% endif%}">
         <h4 class="mb-2">Recent comments</h4>
         <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
         <div class="col-md-12 col-lg-6 mb-2 scroll">
             {% for comment in comments %}
-            <div
-                class="card text-body mx-auto {% if not comment.approved and comment.author != user %} d-none{% endif %}">
-
+            <div class="card text-body mx-auto mb-2 {% if not comment.approved and comment.author != user %} d-none{% endif %}">
                 <div class="card-body p-4">
                     <h6 class="fw-bold mb-1">{{comment.author}}</h6>
                     <div class="d-flex align-items-center mb-3">
@@ -67,7 +64,7 @@
                                 <span class="badge bg-primary">Pending</span>
                             </p>
                             {% endif %}
-                            <p class="{% if comment.author != user %} d-none{% endif%}">
+                            <p class="{% if comment.author != user %} d-none{% endif%} optionButtons">
                                 <button comment_id="{{ comment.id }}" class="btn-edit btn btn-success btn-sm rounded-0"
                                     type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
                                         class="fa fa-edit"></i></button>
@@ -87,7 +84,7 @@
         </div>
 
         <div class="col-md-12 col-lg-6 mb-2">
-            <div class="card text-body mx-auto mt-auto">
+            <div class="card text-body mx-auto mt-auto commentCard">
                 <div class="card-body">
                     <div class="d-flex align-items-center mb-3">
                         <div class="mb-0">
@@ -96,7 +93,8 @@
                                 <form id="commentForm" class="form-group" method="post">
                                     {% csrf_token %}
                                     {{ comment_form | crispy}}
-                                    <button id="submitButton" data-mdb-button-init data-mdb-ripple-init
+                                    <button onclick="alert('Your comment is awating approval')" id="submitButton"
+                                        data-mdb-button-init data-mdb-ripple-init
                                         class="btn btn-success">Submit</button>
                                 </form>
                             </div>
@@ -128,7 +126,4 @@
     </div>
 </div>
 
-{% endblock %}
-{% block extras %}
-<script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}
