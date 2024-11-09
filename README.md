@@ -40,7 +40,7 @@ Healthy Foodie blog is a space for healthy food lovers to explore, create, share
 
 ## Agile Methodology
 
-The plan for this website was carried out using Agine Methodology. GitHub Issues, which can be viewed [here](https://github.com/DianaStrahilova/Healthy-Foodie-Blog-PP4/issues?q=is%3Aissue+is%3Aclosed{:target="_blank"})
+The plan for this website was carried out using Agine Methodology. GitHub Issues, which can be viewed [here](https://github.com/DianaStrahilova/Healthy-Foodie-Blog-PP4/issues?q=is%3Aissue+is%3Aclosed)
 
 ## UX
 ### Site Purpose:
@@ -76,7 +76,7 @@ The plan for this website was carried out using Agine Methodology. GitHub Issues
 
    ### Landing Page:
 
-<img src=" height="432" width="720"> 
+<img src="" height="432" width="720"> 
 
 
 
