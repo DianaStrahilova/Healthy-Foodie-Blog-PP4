@@ -66,6 +66,21 @@
         </div>
     </nav>
 
+    <!-- Displaying Django messages -->
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-6 offset-md-2 text-center">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible opacity
+                    fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
     <main>
 
         {% if user.is_authenticated %}
@@ -73,6 +88,8 @@
         {% else %}
         <p class="text-end m-3">You are not logged in</p>
         {% endif %}
+
+
 
         {% block content %}
         <!-- Content Goes here -->
@@ -100,8 +117,6 @@
                     </div>
                 </div>
             </div>
-
-
         </section>
     </footer>
     <script src="{% static 'js/script.js' %}"></script>

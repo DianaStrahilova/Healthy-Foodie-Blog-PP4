@@ -123,6 +123,11 @@ p .badge {
     margin-left: 1rem;
 }
 
+#msg, .msg {
+    background-color: #FFD700;
+
+}
+
 /* Footer */
 .icons {
     display: flex;

@@ -53,7 +53,8 @@
         <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
         <div class="col-md-12 col-lg-6 mb-2 scroll">
             {% for comment in comments %}
-            <div class="card text-body mx-auto mb-2 {% if not comment.approved and comment.author != user %} d-none{% endif %}">
+            <div
+                class="card text-body mx-auto mb-2 {% if not comment.approved and comment.author != user %} d-none{% endif %}">
                 <div class="card-body p-4">
                     <h6 class="fw-bold mb-1">{{comment.author}}</h6>
                     <div class="d-flex align-items-center mb-3">
@@ -65,12 +66,11 @@
                             </p>
                             {% endif %}
                             <p class="{% if comment.author != user %} d-none{% endif%} optionButtons">
-                                <button comment_id="{{ comment.id }}" class="btn-edit btn btn-success btn-sm rounded-0"
+                                <button comment_id="{{ comment.id }}" class="btn btn-edit btn-success btn-sm rounded-0"
                                     type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
                                         class="fa fa-edit"></i></button>
-                                <button comment_id="{{ comment.id }}"
-                                    class=" btn-delete btn btn-danger btn-sm rounded-0" type="button"
-                                    data-toggle="tooltip" data-placement="top" title="Delete"><i
+                                <button comment_id="{{ comment.id }}" class="btn btn-delete btn-danger btn-sm rounded-0"
+                                    type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
                                         class="fa fa-trash"></i></button>
                             </p>
                         </p>
@@ -93,7 +93,7 @@
                                 <form id="commentForm" class="form-group" method="post">
                                     {% csrf_token %}
                                     {{ comment_form | crispy}}
-                                    <button onclick="alert('Your comment is awating approval')" id="submitButton"
+                                    <button id="submitButton"
                                         data-mdb-button-init data-mdb-ripple-init
                                         class="btn btn-success">Submit</button>
                                 </form>
@@ -107,19 +107,19 @@
     </div>
 </div>
 
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Delete Comment</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="deleteModalLabel"> Delete Comment? </h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 Are you sure you want to delete your comment?
                 This action is permanent.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
             </div>
         </div>

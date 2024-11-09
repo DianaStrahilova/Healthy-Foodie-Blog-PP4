@@ -1,11 +1,12 @@
-from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
 from .models import Recipe, Comment
+from .forms import RecipeForm, CommentForm
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.views.generic.edit import FormMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
-from .forms import RecipeForm, CommentForm
+
 from django.http import HttpResponse, HttpResponseRedirect
 from django import forms
 
@@ -36,7 +37,7 @@ def recipe_detail(request, slug):
 
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid:
+        if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.author = request.user
             comment.recipe = recipe
@@ -85,6 +86,10 @@ def comment_edit(request, slug, comment_id):
             comment.recipe = recipe
             comment.approved = False
             comment.save()
+            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+
     return HttpResponseRedirect(reverse('recipe', args=[slug]))
 
 
@@ -98,6 +103,7 @@ def comment_delete(request, slug, comment_id):
 
     if comment.author == request.user:
         comment.delete()
+        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
 
     return HttpResponseRedirect(reverse('recipe', args=[slug]))
 
