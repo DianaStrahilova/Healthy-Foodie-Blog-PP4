@@ -1,131 +1,173 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Healthy Foodie Blog
 
-Welcome Diana Strahilova,
+![](.)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Healthy Foodie blog is a space for healthy food lovers to explore, create, share and enjoy meals. Only registered users can add recipes and add comments.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
 
-## Gitpod Reminders
+- Live Website [Healthy Foodie](https://healthy-foodie-eea32bb0021f.herokuapp.com/)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+## Table of contents
+- [Agile Methodology](#agile-methodology)
+- [UX](#UX)
+   - [Site Purpose](#site-purpose)
+   - [Audience](#audience)
+   - [Communication](#communication)
+   - [Future Goals](#future-goals)
+   
+- [Design](#design)
+   - [Flowchart](#flowchart)
+- [Features](#features)
+   - [Landing Page](#landing-page)
+   - 
+   - 
+   - 
+   - 
+- [Testing](#testing)
+   - [Validator Testing](#validator-testing)
+   - [Manual Testing](#manual-testing)
+   - [Bugs](#bugs)
+   - [Remaining Bugs](#remaining-bugs)
+- [Technologies Used](#technologies-used)
+   - [Main Language](#main-langoage)
+   - [Frameworks, Libraries and Programs](#frameworks-libraries-and-programs)
+- [Deployment](#deployment)
+   - [Version Control](#version-control)
+   - [Page Deployment](#page-deployment)
+- [Credits](#credits)
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## Agile Methodology
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+The plan for this website was carried out using Agine Methodology. GitHub Issues, which can be viewed [here](https://github.com/DianaStrahilova/Healthy-Foodie-Blog-PP4/issues?q=is%3Aissue+is%3Aclosed{:target="_blank"})
 
-A blue button should appear to click: _Make Public_,
+## UX
+### Site Purpose:
 
-Another blue button should appear to click: _Open Browser_.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Audience:
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
 
-### Connecting your Mongo database
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+### Communication:
 
-------
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Future Goals:
 
-**June 18, 2024,** Add Mongo back into template
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
 
-**May 28 2024:** Fix Mongo and Links installs
+[Back to top](#table-of-contents)
 
-**April 26 2024:** Update node version to 16
+## Design
+     
+   ### Flowchart
 
-**September 20 2023:** Update Python version to 3.9.17.
+  - 
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+ ![]()
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+[Back to top](#table-of-contents)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Features
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+   ### Landing Page:
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+<img src=" height="432" width="720"> 
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Testing 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Validator Testing 
+- [CI PEP8 Online](https://pep8ci.herokuapp.com/).
+    - No errors were returned.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+<img src="" height="432" width="720">
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Bugs
 
-------
+- 
 
-## FAQ about the uptime script
+- 
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Remaining Bugs
 
-**How will this affect me?**
+- No bugs remaining as far as I know.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+[Back to top](#table-of-contents)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Technologies Used
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Main Language
+- Python
 
-**So….?**
+### Frameworks, Libraries and Programs
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- [GitPod](https://www.gitpod.io/) - as coding environment.
+- [GitHub](https://github.com/) - to store the repository for submission.
+- [Draw.io](https://app.diagrams.net/) - to create the flowchart.
+- [Heroku](https://dashboard.heroku.com/apps) - to deploy the project.
+- [Am I Responsive](https://ui.dev/amiresponsive) - for the preview image at the top of the README.md.
+- [Code Institute template](https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python) for GitPod and this README.
+- [CI PEP8 Online](https://pep8ci.herokuapp.com/) according to the PEP 8 style guide for validating the Python code.
+- 
+- 
+- 
 
-**Can I opt out?**
+[Back to top](#table-of-contents)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## Deployment
+   ### Version Control 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+   The version control was maintained using git within GitPod VS Code workspace and push code to main repository.
+   - From the VS Code terminal type "git add .", to make changes/updates to the files.
+   - Type "git commit -m (insert a short message)", which commits the changes and updates the files.
+   - Use "git push" command to push the commited changes to the main repository.
 
-**Anything more?**
+   ### Page Deployment
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+   The app was deployed to Heroku CLI. The steps are as follows:
+   - After creating an account and signing in, click "New" to create a new app from the dashboard.
+   - Create a unique name for the app and select region; press "Create app".
+   - Go to "Settings" to navigate to "Config Vars."
+   - Add Config Vars.
+        - For this app was used: "KEY = PORT : VALUE = 8000". As stated in the README.md template for this project. 
+   - Add buildpacks Python and NodeJS.
+   - Click "Deploy Branch".
+   - Scroll down to Deployment Method and select GitHub.
+   - Select the repository to be deployed and connect to Heroku.
+   - Scroll down to "Deploy":
+        - Option 1 is selecting Automatic Deploys.
+        - Option 2 is Manual Deploys, which was used for this project.
+   
+   Live deployment [Spooky Hangman](https://spooky-hangman-b6ee3e9202ec.herokuapp.com/)
 
----
+[Back to top](#table-of-contents)
 
-Happy coding!
+## Credits 
+
+
+
+- 
+- 
+- 
+- 
+
+
+
+[Back to top](#table-of-contents)
+
+## Acknowledgements
+
+
+
+[Back to top](#table-of-contents)
+
