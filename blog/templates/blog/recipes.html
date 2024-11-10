@@ -3,7 +3,7 @@
 
 {% block content %}
 
-
+{% block title %}<title>BLOG</title>{% endblock %}
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
@@ -21,12 +21,12 @@
                                 <img class="card-img-top" src=" {{ recipe.image.url }}" alt="{{ recipe.image_alt }}">
                                 {% endif %}
                             </div>
+                            <hr class="hr" />
                             <a href="{% url 'recipe' recipe.slug %}" class="detail-link">
                                 <h4 class="card-title">{{ recipe.title }}</h4>
                             </a>
-                            <hr />
-                            <p class="card-text">{{ recipe.author }}</p>
-                            <p class="card-text text-muted h6">Last updated on {{ recipe.updated_on }}
+                            <hr class="hr" />
+                            <p class="card-text h6">{{ recipe.author }} | {{ recipe.updated_on }}
                             </p>
                         </div>
                     </div>

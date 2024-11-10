@@ -67,8 +67,14 @@ body {
 
 .detail-link {
     text-decoration: none;
-    color: tomato;
+    color: #FFD700;
 }
+
+.detail-link:hover{
+    color: #FFFF80;
+}
+
+
 
 .recipe-image {
     height: 80%;
@@ -77,9 +83,17 @@ body {
 
 }
 
+.card-body {
+    background-color: tomato;
+}
+
+.hr {
+    color: #FFD700;
+}
+
 /* Add Recipe Page */
 .recipeForm {
-    background-color: #FFFF80;
+    background-color: #FFD700;
     width: 80%;
 
 }
