@@ -58,20 +58,6 @@ def recipe_detail(request, slug):
         },
     )
 
-def recipe_edit(request, slug):
-    if request.method == "POST":
-        queryset = Recipe.objects.filter(status=1)
-        recipe = get_object_or_404(queryset, slug=slug)
-        recipe_form = RecipeForm(data=request.POST, instance=recipe)
-
-        if recipe_form.is_valid() and recipe.author == request.user:
-            recipe = recipe_form.save(commit=False)
-            recipe.approved = False
-            recipe.save()
-    return HttpResponseRedirect(reverse('add_recipe', args=[slug]))
-
-
-
 
 def comment_edit(request, slug, comment_id):
     if request.method == "POST":

@@ -17,11 +17,11 @@ Healthy Foodie blog is a space for healthy food lovers to explore, create, share
    - [Future Goals](#future-goals)
    
 - [Design](#design)
-   - [Flowchart](#flowchart)
+   - [Database Schema](#database-schema)
 - [Features](#features)
    - [Landing Page](#landing-page)
-   - 
-   - 
+   - [Blog Page](#blog-page)
+   - [Recipe View](#recipe-view)
    - 
    - 
 - [Testing](#testing)
@@ -100,7 +100,7 @@ For future goals I would like to add a User Profile page.
 
   The footer displays social media links and is also repeated across all pages.
 
-#### Database Schema:
+   #### Database Schema:
 
   - The database schema for this project is one-to-many. 
       - Each recipe can have multiple comments.
@@ -148,7 +148,7 @@ Roboto, Poppins and fall back sans-serif were used throughout the website.
    
    ![](./static/readme-images/footer.png)
 
-    ### Landing Page:
+   ### Landing Page:
 
    The Home page includes a heading with the blog name. It engages the user to join and share their recipes. Includes links to Sign Up and Add Recipe pages.
 
