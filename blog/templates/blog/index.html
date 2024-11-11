@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-{% url 'account_signup' as signup_url %}
-{% url 'add_recipe' as add_recipe_url %}
 
 {% block content %}
 
@@ -9,23 +7,25 @@
 
     <div class="container">
         <h1>Welcome to The Healthy Foodie Blog!</h1>
-        <p>You are at the right place!</p>
+        <h3>You are at the right place!</h3>
         <div class="row gy-5 gx-5">
             <div class="col-md-12">
                 <div class="p-4 intro">
-                    <span><i class="fa-solid fa-door-open" style="font-size: 4rem"></i></span>
+                    <span><i class="fa-solid fa-door-open coloredIcon mb-4" style="font-size: 4rem"></i></span>
                     <p>
                         Whether you’re looking to nourish your body or just try something new, you’ll find plenty of
                         inspiration here. Let’s dive into the world of healthy, feel-good food—because nutritious can be
                         delicious!
                     </p>
+                    <a class="btn styledButton" href="{% url 'recipes' %}" role="button">| BLOG |</a>
+
 
 
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="p-4 intro">
-                    <span><i class="fa-solid fa-user" style="font-size: 4rem"></i></span>
+                    <span><i class="fa-solid fa-user coloredIcon mb-4" style="font-size: 4rem"></i></span>
                     <p>Join our community of food enthusiasts and share in the joy of cooking! Here, you can explore a
                         growing collection of recipes from fellow members, swap tips, and share your own culinary
                         creations.
@@ -38,7 +38,7 @@
             </div>
             <div class="col-md-6">
                 <div class="p-4 intro">
-                    <span><i class="fa-solid fa-book" style="font-size: 4rem"></i></span>
+                    <span><i class="fa-solid fa-book coloredIcon mb-4" style="font-size: 4rem"></i></span>
                     <p>
                         Got a recipe you love? Share it with us! We’re always excited to see what’s cooking in your
                         kitchen.Join us in celebrating great

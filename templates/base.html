@@ -69,7 +69,7 @@
     <!-- Displaying Django messages -->
     <div class="container mt-3">
         <div class="row">
-            <div class="col-md-6 offset-md-2 text-center">
+            <div class="col-md-6 offset-md-3 text-center">
                 {% for message in messages %}
                 <div class="alert {{ message.tags }} alert-dismissible
                     fade show" id="msg" role="alert">
@@ -81,16 +81,15 @@
         </div>
     </div>
 
-    <main>
-
-        {% if user.is_authenticated %}
-        <p class="text-end m-3">You are logged in as {{ user.username }}</p>
-        {% else %}
-        <p class="text-end m-3">You are not logged in</p>
-        {% endif %}
-
-
-
+    <main class="flex-shrink-0">
+        <div class="d-flex flex-row-reverse">
+            {% if user.is_authenticated %}
+            <p class="p-2 userAlert m-3">You are logged in as {{ user.username }}</p>
+            {% else %}
+            <p class="p-2 userAlert m-3">You are not logged in</p>
+            {% endif %}
+        </div>
+        
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}

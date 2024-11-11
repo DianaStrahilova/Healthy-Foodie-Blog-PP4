@@ -25,6 +25,7 @@ body {
     margin-left: 10px;
 }
 
+
 .lead {
     padding: 10px;
     line-height: 2.5rem;
@@ -33,6 +34,13 @@ body {
 .navbar-brand {
     font-weight: 700;
 }
+
+.userAlert {
+    color: black;
+    font-weight: 700;
+    background-color: tomato;
+}
+
 
 
 /* Home Page */
@@ -45,6 +53,11 @@ body {
 
 .opacity {
     background-color: rgba(255, 255, 255, 0.8);
+}
+
+.coloredIcon {
+    color: tomato;
+    display: inline-block;
 }
 
 
@@ -75,7 +88,6 @@ body {
 }
 
 
-
 .recipe-image {
     height: 80%;
     width: 80%;
@@ -100,7 +112,6 @@ body {
 div.scroll {
     margin: 4px, 4px;
     padding: 4px;
-    background-color: transparent tomato;
     height: 300px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -111,8 +122,16 @@ textarea.form-control {
     height: 100px;
 }
 
-p .badge {
-    margin-left: 1rem;
+div.commentDisplay {
+    border: 5px solid #FFD700;
+    background-color: #FFFF80;
+}
+
+.btn-edit, .btn-delete {
+    height: 2rem;
+    width: fit-content;
+    padding: 2px;
+    
 }
 
 
@@ -120,6 +139,8 @@ p .badge {
     background-color: #FFD700;
 
 }
+
+
 
 /* Add Recipe Page */
 .recipeForm {
