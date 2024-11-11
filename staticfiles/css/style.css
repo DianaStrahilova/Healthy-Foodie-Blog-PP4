@@ -75,7 +75,6 @@ body {
 }
 
 
-
 .recipe-image {
     height: 80%;
     width: 80%;
@@ -112,17 +111,18 @@ div.card {
     width: 80%;
 }
 
+
 /* Comment Section */
 
-.scroll,
-.commentCard {
+
+#commentBody {
     background-color: #FFFF80
 }
 
 div.scroll {
     margin: 4px, 4px;
     padding: 4px;
-    background-color: transparent tomato;
+    /* background-color: tomato; */
     height: 300px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -141,6 +141,8 @@ p .badge {
     background-color: #FFD700;
 
 }
+
+
 
 /* Footer */
 .icons {

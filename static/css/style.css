@@ -91,31 +91,9 @@ body {
     color: #FFD700;
 }
 
-/* Add Recipe Page */
-.recipeForm {
-    background-color: #FFD700;
-    width: 80%;
-
-}
-
-
-/* Recipe Detail */
-.ingredients ul {
-    list-style-type: none;
-}
-
-.instructions {
-    text-align: left;
-}
-
-div.card {
-    width: 80%;
-}
-
 /* Comment Section */
 
-.scroll,
-.commentCard {
+.commentBody {
     background-color: #FFFF80
 }
 
@@ -137,10 +115,34 @@ p .badge {
     margin-left: 1rem;
 }
 
+
 #msg, .msg {
     background-color: #FFD700;
 
 }
+
+/* Add Recipe Page */
+.recipeForm {
+    background-color: #FFD700;
+    width: 80%;
+
+}
+
+
+/* Recipe Detail */
+.ingredients ul {
+    list-style-type: none;
+}
+
+.instructions {
+    text-align: left;
+}
+
+div.card {
+    width: 80%;
+}
+
+
 
 /* Footer */
 .icons {
@@ -181,8 +183,4 @@ footer,
         height: fit-content;
     }
 
-    /* .optionButtons .btn {
-        padding: 5px;
-        
-    } */
 }

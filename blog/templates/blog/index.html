@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
-{% url 'account_signup' as signup_url %}
 {% load static %}
+{% url 'account_signup' as signup_url %}
+{% url 'add_recipe' as add_recipe_url %}
+
 {% block content %}
 
 <div class="container-fluid text-center mb-4 opacity">
-    
+
     <div class="container">
         <h1>Welcome to The Healthy Foodie Blog!</h1>
         <p>You are at the right place!</p>
@@ -28,7 +30,9 @@
                         growing collection of recipes from fellow members, swap tips, and share your own culinary
                         creations.
                     </p>
-                    <a class="btn styledButton" href="{% url 'account_signup' %}" role="button">Join us now!</a>
+
+                    <a class="{% if user.is_authenticated %}d-none{% endif %} btn styledButton"
+                        href="{% url 'account_signup' %}" role="button">Join us now!</a>
 
                 </div>
             </div>
@@ -40,7 +44,7 @@
                         kitchen.Join us in celebrating great
                         food and inspiring others with your delicious ideas!
                     </p>
-                    <a class="btn styledButton" href="{% url 'account_signup' %}" role="button">Add Recipe</a>
+                    <a class="btn styledButton" href="{% url 'add_recipe' %}" role="button">Add Recipe</a>
 
                 </div>
             </div>
