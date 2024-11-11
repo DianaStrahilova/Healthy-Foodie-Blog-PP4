@@ -7,8 +7,8 @@
 
 {% block content %}
 <div class="container-fluid opacity">
-    <div class="row text-center container-fluid opacity">
-        <div class="col">
+    <div class="row text-center container-fluid">
+        <div class="col opacity">
             <h3>{{ recipe.title }}</h3>
             <p>Created By: <span>{{ recipe.author }} | {{ recipe.created_on }}</span></p>
             <p class="{% if recipe.author != user %} d-none{% endif%}">
@@ -127,4 +127,8 @@
     </div>
 </div>
 
+{% endblock content%}
+
+{% block extras %}
+<script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}

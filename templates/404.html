@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block content %} 
-    <div class="container text-center opacity">
+{% block content %}
+<div class="container text-center opacity">
+    <div class="opacity">
         <h1>404 - This Page Does Not Exist</h1>
         <a href="{% url 'home' %}" class="btn w-25 styledButton">Home</a>
     </div>
+</div>
 {% endblock %}

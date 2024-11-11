@@ -58,6 +58,7 @@ body {
 .coloredIcon {
     color: tomato;
     display: inline-block;
+    font-size: 3rem;
 }
 
 
@@ -175,6 +176,7 @@ div.card {
 
 .social-icon {
     height: 2rem;
+    width: 2rem;
     margin: 1rem;
 }
 
