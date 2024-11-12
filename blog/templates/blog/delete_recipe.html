@@ -6,7 +6,7 @@
 {% block content %}
 <div class="container opacity">
     <h1 class="text-center mt-2">Confirm Recipe Deletion</h1>
-    <div class="d-flex justify-content-center pt-3">
+    <div class="d-flex justify-content-center pt-3 opacity">
         <form method="post" class="text-center">
             {% csrf_token %} 
             <p>Are you sure you want to delete "{{object.title}}"?</p>

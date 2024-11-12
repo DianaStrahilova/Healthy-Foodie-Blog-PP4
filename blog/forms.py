@@ -1,19 +1,15 @@
 from django import forms
 from .models import Recipe, Comment
-from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
+from django_summernote.widgets import SummernoteWidget
 
 
 class RecipeForm(forms.ModelForm):
     """ Form to create a new recipe  """
-
+    ingredients = forms.CharField(widget=SummernoteWidget())
+    instructions = forms.CharField(widget=SummernoteWidget())
     class Meta:
         model = Recipe
         fields = ['title', 'description', 'ingredients', 'instructions', 'calories', 'image']
-        
-        widgets = {
-            'ingredients': SummernoteWidget(),
-            'instructions': SummernoteWidget()
-        }
         
         labels = {
             'title': 'Recipe Title',

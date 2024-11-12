@@ -163,7 +163,11 @@ For future goals I would like to add a User Profile page.
     ![]() -- Blog page image ...
 
 
+   ### Add Recipe
 
+  Only registered users can add recipes. All recipes must first be approved by the admin.
+
+  ![](./static/readme-images/add-recipe.png)
 
 
    ### Detail View Page:
@@ -193,8 +197,39 @@ For future goals I would like to add a User Profile page.
    <img src="./static/readme-images/edit-delete.png" height="140" width="400">
 
    #### Edit Recipe
-   By clicking the edit button, the author is taken to the edit recipe page
+  
+  By clicking on the edit button, the user is brought to the edit recipe page, where they can update their recipe.
+  The page contains a summernote field for better user experience.
 
+  ![](./static/readme-images/edit-recipe.png)
+
+
+  #### Delete Recipe 
+
+  By clicking on the 'Delete' button, the user is asked to confirm deletion.
+
+  ![](./static/readme-images/recipe-deletion.png)
+
+
+
+   ### Register 
+  Register Page 
+
+  ![](./static/readme-images/register.png)
+
+
+  ### Sign In 
+
+  ![](./static/readme-images/signin.png)
+
+
+  ### Sign Out 
+
+  ![](./static/readme-images/signout.png)
+
+
+
+  
    
 
 

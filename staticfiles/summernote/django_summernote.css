@@ -6,3 +6,7 @@
 form .summernote-div .dropdown-menu {
   margin-left: 0;
 }
+
+.note-editor .note-toolbar, .note-popover .popover-content {
+  background-color: yellow;
+}

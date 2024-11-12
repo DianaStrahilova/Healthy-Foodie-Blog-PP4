@@ -76,7 +76,7 @@ SUMMERNOTE_CONFIG = {
 ['color', ['color']],
 ['para', ['ul', 'ol', 'paragraph']],
 ],
-'width': 755,
+'width': 775,
 'height': 400,
 'focus': True,
 'fontSizes': ['8', '9', '10', '11', '12', '14', '18', '22','24', '36', '48' , '64', '82', '150'],
