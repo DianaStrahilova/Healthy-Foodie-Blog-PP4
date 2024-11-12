@@ -78,6 +78,7 @@ body {
     width: 100%;
     height: 15vw;
     object-fit: cover;
+    border: 5px solid #FFD700;
 }
 
 .detail-link {
@@ -99,6 +100,7 @@ body {
 
 .card-body {
     background-color: tomato;
+    border: 5px solid #FFD700;
 }
 
 .hr {
@@ -109,7 +111,7 @@ body {
 
 
 div.scroll {
-    margin: 4px, 4px;
+    margin: 4px;
     padding: 4px;
     height: 300px;
     overflow-x: hidden;
@@ -144,14 +146,14 @@ div.commentDisplay, .commentBody {
 /* Add Recipe Page */
 .recipeForm {
     background-color: #FFD700;
-    width: 80%;
+    width: 60%;
 
 }
+
 
 #id_ingredients_iframe,
 #id_instructions_iframe {
     width: 100%;
-    background-color: #FFFF80;
 }
 
 

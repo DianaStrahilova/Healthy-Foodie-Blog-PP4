@@ -227,6 +227,45 @@ For future goals I would like to add a User Profile page.
 
   ![](./static/readme-images/signout.png)
 
+ ### 404 Page
+ ![](./static/readme-images/404.png)
+
+
+## Testing 
+
+I have performed only manual testing for this project, however automated testing will be considered or implemented in future.
+
+### Code Validation
+   #### HTML
+   - Home Page
+      - No errors returned.
+
+      ![](./static/readme-images/home-validator.png)
+
+   - Blog Page
+      - No errors returned.
+
+      ![](./static/readme-images/recipes-validator.png)
+
+   - Add Recipe 
+      - No errors returned.
+
+      ![](./static/readme-images/add-recipe-v.png)
+
+   - Recipe Detail
+      - No errors returned.
+
+      ![](./static/readme-images/recipe-detail-v.png)
+
+   - Edit Recipe 
+      - Some errors coming from the summernote field returned. I could not fix them. However it is a better user experince having the field. 
+
+      ![](./static/readme-images/recipe-edit-v.png)
+   - Delete Recipe 
+      - No errors returned.
+
+      ![](./static/readme-images/)
+
 
 
   
