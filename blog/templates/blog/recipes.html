@@ -22,11 +22,13 @@
                                 <img class="card-img-top" src=" {{ recipe.image.url }}" alt="{{ recipe.image_alt }}">
                                 {% endif %}
                             </div>
+                            <hr class="hr">
                             <a href="{% url 'recipe' recipe.slug %}" class="detail-link">
                                 <h4 class="card-title">{{ recipe.title }}</h4>
                             </a>
                             <p class="card-text h6">{{ recipe.author }} | {{ recipe.updated_on }}
                             </p>
+                            <hr class="hr">
                         </div>
                     </div>
                 </div>

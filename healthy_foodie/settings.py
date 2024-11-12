@@ -29,10 +29,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["8000-dianastrahi-healthyfood-q6izx0fp5r7.ws.codeinstitute-ide.net",
-                    ".herokuapp.com"
+ALLOWED_HOSTS = [
+    "8000-dianastrahi-healthyfood-q6izx0fp5r7.ws.codeinstitute-ide.net",
+    ".herokuapp.com"
 ]
 
 
@@ -55,7 +56,6 @@ INSTALLED_APPS = [
 
     # Apps
     'blog',
-    
     'cloudinary',
     'cloudinary_storage',
 ]
@@ -64,26 +64,22 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-
 SUMMERNOTE_CONFIG = {
-'summernote': {
-'toolbar': [
-['undo', ['undo',]],
-['redo', ['redo',]],
-['style', ['bold', 'italic', 'underline',]],
-['font', ['strikethrough',]],
-['fontsize', ['fontsize',]],
-['color', ['color']],
-['para', ['ul', 'ol', 'paragraph']],
-],
-'width': 775,
-'height': 400,
-'focus': True,
-'fontSizes': ['8', '9', '10', '11', '12', '14', '18', '22','24', '36', '48' , '64', '82', '150'],
-},
+    'summernote': {
+     'toolbar': [['undo', ['undo', ]],
+                 ['redo', ['redo', ]],
+                 ['style', ['bold', 'italic', 'underline', ]],
+                 ['font', ['strikethrough', ]],
+                 ['fontsize', ['fontsize', ]],
+                 ['color', ['color']],
+                 ['para', ['ul', 'ol', 'paragraph']], ],
+    # 'width': 550,
+    # 'height': 400,
+    'focus': True,
+    'fontSizes': ['8', '9', '10', '11', '12', '14', '18', '22', '24', '36',
+                   '48', '64', '82', '150'],
+                },
 }
-
-
 
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -136,7 +132,7 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
-CSRF_TRUSTED_ORIGINS= ['https://*.8000-dianastrahi-healthyfood-q6izx0fp5r7.ws.codeinstitute-ide.net',
+CSRF_TRUSTED_ORIGINS = ['https://*.8000-dianastrahi-healthyfood-q6izx0fp5r7.ws.codeinstitute-ide.net',
                         'https://*.herokuapp.com']
 
 
