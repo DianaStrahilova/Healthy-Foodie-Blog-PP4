@@ -11,7 +11,7 @@
         <h1 class="text-center">Add Recipe</h1>
         {% csrf_token %}
         {{ form | crispy }}
-        <!-- {{ form.media }} -->
+        {{ form.media }}
         <div class="text-center">
             <button onclick="alert('Your recipe will be submitted for approval')" type="submit" class="btn styledButton mt-2">Create Recipe</button>
         </div>
