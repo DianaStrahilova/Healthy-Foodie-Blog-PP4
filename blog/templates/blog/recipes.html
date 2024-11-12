@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}<title>BLOG</title>{% endblock %}
 {% block content %}
 
-{% block title %}<title>BLOG</title>{% endblock %}
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
@@ -21,11 +22,9 @@
                                 <img class="card-img-top" src=" {{ recipe.image.url }}" alt="{{ recipe.image_alt }}">
                                 {% endif %}
                             </div>
-                            <hr class="hr" />
                             <a href="{% url 'recipe' recipe.slug %}" class="detail-link">
                                 <h4 class="card-title">{{ recipe.title }}</h4>
                             </a>
-                            <hr class="hr" />
                             <p class="card-text h6">{{ recipe.author }} | {{ recipe.updated_on }}
                             </p>
                         </div>
@@ -35,8 +34,8 @@
                 {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
-            {% endif %}
-            {% endfor %}
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>

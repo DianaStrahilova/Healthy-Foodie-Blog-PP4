@@ -12,9 +12,9 @@
             <h3>{{ recipe.title }}</h3>
             <p>Created By: <span>{{ recipe.author }} | {{ recipe.created_on }}</span></p>
             <p class="{% if recipe.author != user %} d-none{% endif%}">
-                <a href="{% url 'edit_recipe' recipe.slug %}" class="btn btn-success btn-sm rounded-0" type="button"
+                <a href="{% url 'edit_recipe' recipe.slug %}" class="btn btn-success btn-sm rounded-0"
                     data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
-                <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-danger btn-sm rounded-0" type="button"
+                <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-danger btn-sm rounded-0"
                     data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
             </p>
             <hr>
@@ -77,7 +77,7 @@
                         <p class="{% if comment.author != user %} d-none{% endif%} optionButtons">
                             <button class="btn btn-delete btn-danger mt-4" comment_id="{{ comment.id }}"
                                 type="button"><i class="fa fa-trash"></i>Delete</button>
-                            <button class="btn btn-edit btn-success mt-4" comment_id="{{ comment.id }}" type="button"><i
+                            <button class="btn btn-edit btn-success mt-4" comment_id="{{ comment.id }}"><i
                                     class="fa fa-edit"></i> Edit</button>
                         </p>
                     </div>
