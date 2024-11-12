@@ -106,9 +106,6 @@ body {
 
 /* Comment Section */
 
-.commentBody {
-    background-color: #FFFF80
-}
 
 div.scroll {
     margin: 4px, 4px;
@@ -123,7 +120,7 @@ textarea.form-control {
     height: 100px;
 }
 
-div.commentDisplay {
+div.commentDisplay, .commentBody {
     border: 5px solid #FFD700;
     background-color: #FFFF80;
 }

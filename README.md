@@ -18,8 +18,11 @@ Healthy Foodie blog is a space for healthy food lovers to explore, create, share
    
 - [Design](#design)
    - [Database Schema](#database-schema)
+   - [Colour Scheme](#colour-scheme)
+   - [Typography](#typography)
+   - [Icons](#icons)
 - [Features](#features)
-   - [Landing Page](#landing-page)
+   - [Navigation](#navigation)
    - [Blog Page](#blog-page)
    - [Recipe View](#recipe-view)
    - 
@@ -106,28 +109,28 @@ For future goals I would like to add a User Profile page.
       - Each recipe can have multiple comments.
       - Each user can perform multiple intercations.
 
-![](./static/readme-images/models.png)
+      ![](./static/readme-images/models.png)
 
 
-#### Colour Scheme 
+   #### Colour Scheme 
 
-![](./static/readme-images/colors.png)
+   ![](./static/readme-images/colors.png)
 
 
-#### Typography 
+   #### Typography 
 
-Roboto, Poppins and fall back sans-serif were used throughout the website.
+   Roboto, Poppins and fall back sans-serif were used throughout the website.
 
-#### Icons
+   #### Icons
 
-[uxwing](https://uxwing.com/) social media icons were used for the Footer.They are used as interactive links and have an aria-label which gives the relevant information to screen readers to read out to the users.
+   [uxwing](https://uxwing.com/) social media icons were used for the Footer. They are used as interactive links and have an aria-label which gives the relevant information to screen readers to read out to the users.
 
 
 [Back to top](#table-of-contents)
 
 ## Features
 
-   #### Navigation
+   ### Navigation
 
    Featured on all pages, the fully responsive navigation includes:
 
@@ -135,7 +138,7 @@ Roboto, Poppins and fall back sans-serif were used throughout the website.
    - A hamburger button on mobile which opens up a navigation list with links to Home, Blog, Add Recipe, Logout when user is logged in.
    - When user is not logged in Home, Blog, Add Recipe, Register, Login. If user clicks Add Recipe, in this case will be redirected to the register page.
    
-   #### Footer
+   ### Footer
    Featured on all pages, the fully responsive footer includes:
 
    - Social Media Links.
@@ -157,14 +160,46 @@ Roboto, Poppins and fall back sans-serif were used throughout the website.
    ### Blog Page:
    The Blog page displays paginated list with the latest posts(recipes). Each post is displayed as a card, containing the post image, title (as a clickable link), author and the date it was created on.
 
+    ![]() -- Blog page image ...
 
-   ### Recipe View:
+
+
+
+
+   ### Detail View Page:
+
+   #### Recipe Detail View:
+
    By clicking on the title link, the user is taken to the full recipe page, where they can see the full content of the recipe.
-   Only registered user can view and post comments. If comment hasn't been approved by the admin, the comment is only visible for the user who created it.
+
+   ![](./static/readme-images/recipe-detail.png)
 
 
-   ![]() -- Blog page image ...
+   #### Comment Section
+   The detail view page also contains a scroll with the comments for the relevant recipe and a comment form to leave a comment.
+   It has a full CRUD functionality.
+      - Non regitered users cannot view the comment section.
+      - Registered users can view and post comments.
+      - Registered users can edit or delete their comments. 
+      - If comment is not approved, it is only visible to it's author and contains a 'Pending' badge. Once it's approved, the badge is gone.
+      - Logged in users can edit and delete their own comments.
 
+   ![](./static/readme-images/comments.png)
+
+
+   ### Update View / Delete View
+   The detail recipe view contains edit and delete buttons only available to it's author. They lead to the relevant pages for edit/delete.
+
+   <img src="./static/readme-images/edit-delete.png" height="140" width="400">
+
+   #### Edit Recipe
+   By clicking the edit button, the author is taken to the edit recipe page
+
+   
+
+
+
+  
 
 
 

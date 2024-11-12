@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["8000-dianastrahi-healthyfood-q6izx0fp5r7.ws.codeinstitute-ide.net",
                     ".herokuapp.com"
@@ -65,17 +65,22 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 
-DJRICHTEXTFIELD_CONFIG = {
-    'js': ['//cdn.ckeditor.com/4.14.0/standard/ckeditor.js'],
-    'init_template': 'djrichtextfield/init/ckeditor.js',
-    'settings': {
-        'toolbar': [
-            ['Format', 'Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList'], ['Undo', 'Redo'],
-            ['Maximize']
-        ],
-        'format_tags': 'p;h1;h2;h3'
-    }
+SUMMERNOTE_CONFIG = {
+'summernote': {
+'toolbar': [
+['undo', ['undo',]],
+['redo', ['redo',]],
+['style', ['bold', 'italic', 'underline',]],
+['font', ['strikethrough',]],
+['fontsize', ['fontsize',]],
+['color', ['color']],
+['para', ['ul', 'ol', 'paragraph']],
+],
+'width': 755,
+'height': 400,
+'focus': True,
+'fontSizes': ['8', '9', '10', '11', '12', '14', '18', '22','24', '36', '48' , '64', '82', '150'],
+},
 }
 
 

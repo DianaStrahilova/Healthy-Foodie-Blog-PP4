@@ -6,7 +6,6 @@ from django.views import generic
 from django.views.generic.edit import FormMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
-
 from django.http import HttpResponse, HttpResponseRedirect
 from django import forms
 

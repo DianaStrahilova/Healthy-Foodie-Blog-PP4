@@ -63,7 +63,7 @@
                 <div class="p-3 commentDisplay">
                     <h6 class="fw-bold mb-1">{{comment.author}} | {{comment.created_on}}
                         <span
-                            class="badge bg-primary {% if not comment.approved and comment.author != user %}d-none{% endif %}">Pending</span>
+                            class="badge bg-primary {% if comment.approved and comment.author == user %}d-none{% endif %}">Pending</span>
                     </h6>
                     <div class="d-flex align-items-center mb-3">
                         <div class="mb-0 space-between">
@@ -73,12 +73,14 @@
 
                         </div>
                     </div>
-                    <p class="{% if comment.author != user %} d-none{% endif%} optionButtons">
-                        <button class="btn btn-delete btn-danger mt-4" comment_id="{{ comment.id }}" type="button"><i
-                                class="fa fa-trash"></i>Delete</button>
-                        <button class="btn btn-edit btn-success mt-4" comment_id="{{ comment.id }}" type="button"><i
-                                class="fa fa-edit"></i> Edit</button>
-                    </p>
+                    <div class="d-flex alignitems-center">
+                        <p class="{% if comment.author != user %} d-none{% endif%} optionButtons">
+                            <button class="btn btn-delete btn-danger mt-4" comment_id="{{ comment.id }}"
+                                type="button"><i class="fa fa-trash"></i>Delete</button>
+                            <button class="btn btn-edit btn-success mt-4" comment_id="{{ comment.id }}" type="button"><i
+                                    class="fa fa-edit"></i> Edit</button>
+                        </p>
+                    </div>
 
                 </div>
             </div>
