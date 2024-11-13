@@ -107,6 +107,13 @@ body {
     color: #FFD700;
 }
 
+a.page-link {
+   color: #FFD700;
+   background-color: tomato;
+   border: 2px solid #FFFF80;
+    
+}
+
 /* Comment Section */
 
 

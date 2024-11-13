@@ -264,7 +264,11 @@ I have performed only manual testing for this project, however automated testing
    - Delete Recipe 
       - No errors returned.
 
-      ![](./static/readme-images/)
+      ![](./static/readme-images/delete-v.png)
+
+   - Login
+      - No errors returned.
+      ![](./static/readme-images/login-v.png)
 
 
 
