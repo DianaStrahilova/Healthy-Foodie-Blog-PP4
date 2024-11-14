@@ -171,6 +171,8 @@ For future goals I would like to add a User Profile page.
   - The form is consistent with the website's style.
   - If image isn't upladed, there is a default image.
 
+  All uploaded images are stored in [Cloudinary](https://cloudinary.com/)
+
   ![](./static/readme-images/add-recipe.png)
 
 
@@ -198,13 +200,13 @@ For future goals I would like to add a User Profile page.
 
 
    ### Update View / Delete View
-   The detail recipe view contains edit and delete buttons only available to it's author. They lead to the relevant pages for edit/delete.
+   Detail recipe view contains edit and delete buttons only available to it's author. They lead to the relevant pages for edit/delete.
 
    <img src="./static/readme-images/edit-delete.png" height="140" width="400">
 
    #### Edit Recipe
   
-  By clicking on the edit button, the user is brought to the edit recipe page, where they can update their recipe.
+  By clicking on the 'Edit' button, the user is brought to the edit recipe page, where they can update their recipe.
   The page contains a summernote field for better user experience.
 
   ![](./static/readme-images/edit-recipe.png)
@@ -219,21 +221,41 @@ For future goals I would like to add a User Profile page.
 
 
    ### Register 
-  Register Page 
+
+   - The fully responsive registration form can be accessed from the navigation bar or when non-registered/logged in  user clicks on 'Add recipe' link.
+   - It uses django-allouth to provide all the settings for user authentication and includes the fields below:
+      - Username(unique)
+      - Email (optional)
+      - Password
+      - Repeat Password
+   - The reister page styles match the rest of the website.
 
   ![](./static/readme-images/register.png)
 
 
   ### Sign In 
+  The sign in form can be accessed from the navigation bar.
+   - It includes a welcome message and a link to the Register form for user who have not registered yet.
+   - A message on successful sign in  shown underneath Navbar.
+   - It uses django-allouth to provide all the settings for user authentication and includes the fields below:
+      - Username
+      - Password
 
   ![](./static/readme-images/signin.png)
 
 
   ### Sign Out 
+  The website has the functionality for a logged in user to log out.
+  - The Logout form can only be accessed from the navigation bar and only when the user is logged in.
+  - It confirms with the logged in user that they want to log out.
+  - The Sign Out button logs out the users and directs them back to the Home page.
+  - A message on successful logout shown underneath Navbar.
+
 
   ![](./static/readme-images/signout.png)
 
  ### 404 Page
+ The 404 page is displayed when user tries to reach a non-existent page on the website. 
  ![](./static/readme-images/404.png)
 
 
@@ -327,9 +349,10 @@ I have performed only manual testing for this project, however automated testing
 
 ### Bugs
 
-- 
+- When I initially made the Recipe model I didn't include a slug field. Later on while I was creating the recipe detail view I decided I need to add it to the model. After adding it I encountered 'slug already exists' error, because I already had data in the database. Tried adding the slugfield as 'Description' field on 'Add Recipe' and it worked for a while until it started showing the same error again. After trying a lot of different ways to implement it, I came across [this article](https://stackoverflow.com/questions/29293096/change-slug-in-django-use-slugify) on [StackOverflow](https://stackoverflow.com/) and realised it is my mistake because I had it set to unique. I changed it up and on approval I can create the slug.
 
-- 
+- I also got a lot of 'Template Not Found' error, which was also my mistake as I had set the project name instead to the app name.
+- I am using Bootstrap5 CSS, however later on in the development I have noticed the jquery and npm script tags are two different versions. When I change to different versions, my navbar would not collapse. Left it as it is.
 
 
 ### Remaining Bugs
@@ -340,23 +363,33 @@ I have performed only manual testing for this project, however automated testing
 
 ## Technologies Used
 
-### Main Language
-- Python
+### Languages
+- [HTML5](https://www.w3schools.com/html/)
+- [CSS3](https://www.w3schools.com/css/css_intro.asp)
+- [Python](https://www.w3schools.com/python/default.asp)
 
-### Frameworks, Libraries and Programs
+### Libraries and Frameworks
 
-- [GitPod](https://www.gitpod.io/) - as coding environment.
-- [GitHub](https://github.com/) - to store the repository for submission.
-- [Draw.io](https://app.diagrams.net/) - to create the flowchart.
-- [Heroku](https://dashboard.heroku.com/apps) - to deploy the project.
+- [Django 4.2.16](https://www.djangoproject.com/) - Free and open source Python Web Framework.
+- [Gunicorn 20.1.0](https://gunicorn.org/) - A Python WSGI HTTP server compatible with Django and used to run the project on Heroku.
+- [PostgreSQL 0.5.1](https://www.postgresql.org/) - A powerful, open-source object-relational database system.
+- [Psycopg2 2.9.10](https://www.psycopg.org/docs/) - A PostgreSQL database adapter for Python.
+- [Heroku](https://dashboard.heroku.com/apps) - A cloud platform as a service.
+- [Django Allauth](https://django-allauth.readthedocs.io/en/latest/) - Integrated set of Django applications addressing authentication and registration.
+- [Bootstrap5](https://getbootstrap.com/docs/5.3/getting-started/download/) - A Framework for building responsive, mobile-fist sites.
+- [whitenoise==5.3.0](https://whitenoise.readthedocs.io/en/latest/) - WhiteNoise is used for serving static files in a Django application.
+- [sqlparse==0.5.1](https://pypi.org/project/sqlparse/) - SQLParse is a library used for parsing SQL queries in Python.
+- [django-summernote==0.8.20.0] - Summernote is a JavaScript library that helps you create WYSIWYG editors with a simple and easy-to-use interface.
+- [Cloudinary](https://cloudinary.com/) - To store the uploaded images.
+- [django-crispy-forms==2.3](https://django-crispy-forms.readthedocs.io/en/latest/) - To safely render the django forms. 
+
+
+### Tools 
+
 - [Am I Responsive](https://ui.dev/amiresponsive) - for the preview image at the top of the README.md.
+[Back to top](#table-of-contents)
 - [Code Institute template](https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python) for GitPod and this README.
 - [CI PEP8 Online](https://pep8ci.herokuapp.com/) according to the PEP 8 style guide for validating the Python code.
-- 
-- 
-- 
-
-[Back to top](#table-of-contents)
 
 ## Deployment
    ### Version Control 
