@@ -243,7 +243,7 @@ footer,
     } */
 }
 
-@media only screen and (max-width: 499px) {
+@media only screen and (max-width: 579px) {
     img.styledImage {
         height: 400px;
         width: 300px;

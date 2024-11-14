@@ -13,7 +13,7 @@ Healthy Foodie blog is a space for healthy food lovers to explore, create, share
 - [UX](#UX)
    - [Site Purpose](#site-purpose)
    - [Audience](#audience)
-   - [Communication](#communication)
+   - [User Experience](#user-experience)
    - [Future Goals](#future-goals)
    
 - [Design](#design)
@@ -23,21 +23,36 @@ Healthy Foodie blog is a space for healthy food lovers to explore, create, share
    - [Icons](#icons)
 - [Features](#features)
    - [Navigation](#navigation)
+   - [Footer](#footer)
+   - [Landing Page](#landing-page)
    - [Blog Page](#blog-page)
-   - [Recipe View](#recipe-view)
-   - 
-   - 
+   - [Add Recipe](#add-recipe)
+   - [Detail View Page](#detail-view-page)
+      - [Recipe Detail View](#recipe-detail-view)
+      - [Comment Section](#comment-section)
+   - [Update View/Delete View](#update-view--delete-view)
+      - [Edit Recipe](#edit-recipe)
+      - [Delete Recipe](#delete-recipe)
+   - [Register](#register)
+   - [Sign In](#sign-in)
+   - [Sign Out](#sign-out)
+   - [404](#404-page)
+   
 - [Testing](#testing)
-   - [Validator Testing](#validator-testing)
-   - [Manual Testing](#manual-testing)
-   - [Bugs](#bugs)
-   - [Remaining Bugs](#remaining-bugs)
+   - [Code Validation](#code-validation)
+      - [HTML](#html)
+      - [CSS](#css-testing)
+      - [Python](#python)
+      - [Lighthouse Testing](#lighthouse-testing)
+      - [Bugs](#bugs)
 - [Technologies Used](#technologies-used)
-   - [Main Language](#main-langoage)
-   - [Frameworks, Libraries and Programs](#frameworks-libraries-and-programs)
+   - [Languages](#languages)
+   - [Libraries and Frameworks](#libraries-and-frameworks)
+   - [Tools](#tools)
 - [Deployment](#deployment)
-   - [Version Control](#version-control)
-   - [Page Deployment](#page-deployment)
+
+
+
 - [Credits](#credits)
 
 
@@ -87,7 +102,7 @@ What user would expect from interecting with the website.
 
 
 ### Future Goals:
-For future goals I would like to add a User Profile page.
+ - For future goals I would like to add a User Profile page with options for avatar and bio.
 
 
 
@@ -379,43 +394,179 @@ I have performed only manual testing for this project, however automated testing
 - [Bootstrap5](https://getbootstrap.com/docs/5.3/getting-started/download/) - A Framework for building responsive, mobile-fist sites.
 - [whitenoise==5.3.0](https://whitenoise.readthedocs.io/en/latest/) - WhiteNoise is used for serving static files in a Django application.
 - [sqlparse==0.5.1](https://pypi.org/project/sqlparse/) - SQLParse is a library used for parsing SQL queries in Python.
-- [django-summernote==0.8.20.0] - Summernote is a JavaScript library that helps you create WYSIWYG editors with a simple and easy-to-use interface.
+- [django-summernote==0.8.20.0](https://pypi.org/project/django-summernote/) - Summernote is a JavaScript library that helps you create WYSIWYG editors with a simple and easy-to-use interface.
 - [Cloudinary](https://cloudinary.com/) - To store the uploaded images.
 - [django-crispy-forms==2.3](https://django-crispy-forms.readthedocs.io/en/latest/) - To safely render the django forms. 
 
 
 ### Tools 
-
-- [Am I Responsive](https://ui.dev/amiresponsive) - for the preview image at the top of the README.md.
-[Back to top](#table-of-contents)
+- [GitHub](https://github.com/) - To store the repository for submission.
+- [GitPod](https://www.gitpod.io/) - As coding environment.
 - [Code Institute template](https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python) for GitPod and this README.
-- [CI PEP8 Online](https://pep8ci.herokuapp.com/) according to the PEP 8 style guide for validating the Python code.
+- [Am I Responsive](https://ui.dev/amiresponsive) - For responsive visuals of the website.
+- [W3C Validator](https://validator.w3.org/) - A validator which checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.
+- [W3C CSS Validation Service ](https://jigsaw.w3.org/css-validator/) - A validator which checks the validity of CSS code.
+- [CI PEP8 Online](https://pep8ci.herokuapp.com/) - Code Institute's Python Linter. Highlights syntactical and stylistic problems in Python source code.
+- [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - Web Developer Tools.
+- [TinyPng](https://tinypng.com/) - Compresses images to reduse the file size.
+- [Coolors](https://coolors.co/) - Colour Palette Generator.
+- [Google Fonts](https://fonts.google.com/) - Fonts.
+- [DrawSql](https://drawsql.app/) - For creating the database schema.
+
+
+
+### Content and Media 
+- [UXwing](https://uxwing.com/) - Social Media Icons
+- [Font Awesome](https://fontawesome.com/) - Icons
+- [Free Images](https://www.freeimages.com/) - For the default upload image.
+- [CleanPNG](https://www.cleanpng.com/) - For the background image of the website.
+- Recipes and Images
+
+
+
+[Back to top](#table-of-contents)
+
 
 ## Deployment
-   ### Version Control 
+For good practice, this project was deployed early on [Heroku](https://dashboard.heroku.com/).
 
-   The version control was maintained using git within GitPod VS Code workspace and push code to main repository.
-   - From the VS Code terminal type "git add .", to make changes/updates to the files.
-   - Type "git commit -m (insert a short message)", which commits the changes and updates the files.
-   - Use "git push" command to push the commited changes to the main repository.
+   <details>
 
-   ### Page Deployment
+<summary>Setting up a Django project and deploying to Heroku</summary>
 
-   The app was deployed to Heroku CLI. The steps are as follows:
-   - After creating an account and signing in, click "New" to create a new app from the dashboard.
-   - Create a unique name for the app and select region; press "Create app".
-   - Go to "Settings" to navigate to "Config Vars."
-   - Add Config Vars.
-        - For this app was used: "KEY = PORT : VALUE = 8000". As stated in the README.md template for this project. 
-   - Add buildpacks Python and NodeJS.
-   - Click "Deploy Branch".
-   - Scroll down to Deployment Method and select GitHub.
-   - Select the repository to be deployed and connect to Heroku.
-   - Scroll down to "Deploy":
-        - Option 1 is selecting Automatic Deploys.
-        - Option 2 is Manual Deploys, which was used for this project.
+#### Create Repository
+
+- Create a new repository in GitHub using the [Code Institute Template](https://github.com/Code-Institute-Org/ci-full-template) and clone it locally folowing [these instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+- 
+
+#### Setting up the workspace
+- Install Django and gunicorn
+   -  ```ruby
+         pip3 install Django~=4.2.1
+
+- Create a project 
+   -  ```ruby
+         django-admin startproject PROJECT_NAME
    
-   Live deployment [Spooky Hangman](https://spooky-hangman-b6ee3e9202ec.herokuapp.com/)
+- Create an app 
+   - ```ruby
+         python3 manage.py startapp APP_NAME
+     ```
+#### Create Database:
+1. [PostgreSQL from Code Institute](https://dbs.ci-dbs.net/)
+
+2. Generate a file named env.py and add it to .gitignore. I used the CI Template and the file was there already.
+      ```ruby
+            touch env.py
+      ```
+
+3. Inside env.py:
+      ```ruby
+      import os
+
+      os.environ.setdefault("DATABASE_URL", "<your-database-URL>")
+      ```
+4. The Django application requires a SECRET_KEY to encrypt session cookies. Set this variable to any string you like or generate a      secret key os.environ[“SECRET_KEY”] = ”SecretKey”
+
+   -  Install the two required packages to connect to PostgreSQL database:
+      ```ruby
+      pip3 install dj-database-url~=0.5 psycopg2~=2.9
+      pip3 freeze --local > requirements.txt
+      ```
+#### Modify settings.py
+
+1. In PROJECT_NAME/settings.py connect settings.py file to env.py
+      ```ruby
+      import os
+      import dj_database_url
+      if os.path.isfile('env.py'):
+          import env
+      ```
+2. Remove the insecure secret ket provided by django and reference the env.py file created earlier:
+      ```ruby
+      SECRET_KEY = os.environ.get(‘SECRET_KEY’)
+      ```
+3. Connect the database using the dj_database_url import.
+      ```ruby
+      DATABASES = {
+      'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+      }
+      ```
+#### Connect the database to Heroku 
+   
+1. Open up the Heroku dashboard, select the project’s app and click on the ‘Settings’ tab.
+2. Click on ‘Reveal Config Vars’ and add the DATABASE_URL with the value of the copied URL from the database instance created on CI database.
+3. Add the SECRET_KEY with the value of the secret key added to the env.py file.
+4. If using gitpod another key needs to be added in order for the deployment to succeed. This is PORT with the value of 8000.
+
+#### Setup the Templates Directory
+
+In settings.py, add the following under BASE_DIR DIRS = os.path.join(BASE_DIR, "templates")
+
+ #### Add the Heroku Host Name
+In settings.py scroll to ALLOWED_HOSTS and add the Heroku host name. This should be the Heroku app name created earlier followed by .herokuapp.com. Add in ’localhost’ so that it can be run locally.
+   
+   ```ruby
+      ALLOWED_HOSTS = [‘.herokuapp.com’, ‘localhost’]
+   ```
+
+#### Store Static and Media Files on Cloudinary
+Have a Cloudinary accoount.
+
+1. In Cloudinary:
+    - Copy CLOUDINARY_URL from Cloudinary Dashboard
+2. In env.py:
+    - Add CLOUDINARY_URL to env.py NOTE: Paste in correct section of the link:
+      ```ruby
+         os.environ["CLOUDINARY_URL"] = "cloudinary://*********"
+      ```
+3. In Heroku:
+    - Add Cloudinary URL to Heroku Config Vars (settings tab) NOTE: Paste in correct section of the link: CLOUDINARY_URL, cloudinary://*********
+    - Add DISABLE_COLLECTSTATIC to Heroku Config Vars (this will be removed for deployment): DISABLE_COLLECTSTATIC, 1
+4. In settings.py:
+    - Add Cloudinary Libraries to installed apps NOTE: Order is important!
+      ```ruby
+         INSTALLED_APPS = [ ..., **'cloudinary_storage'**, 'django.contrib.staticfiles', 'cloudinary', ..., ]
+      ```
+   - Tell Django to use Cloudinary to store media and static files by placing this snippet under the comments indicated below:
+      ```ruby
+      STATIC_URL = '/static/'
+      STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+      STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/')]
+      STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+      MEDIA_URL = '/media/'
+      DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+      ```
+
+#### Create the Directories and the Process File
+
+1. Create the media, static and templates directories at the top level next to the manage.py file.
+2. At the same level create a new file called ‘Procfile’ with a capital ‘P’. This tells Heroku how to run this project.
+3. Add the following code, including the name of your project directory"
+   ```ruby
+      web: gunicorn healthy_foodie.wsgi
+   ```
+   - ‘gunicorn’ is the server used.
+   - ‘wsgi’, stands for web services gateway interface and is a standard that allows Python services to integrate with web servers.
+4. Save everything and push to GitHub.
+
+#### First Deployment
+
+1. Go back to the Heroku dashboard and click on the ‘Deploy’ tab.
+2. For deployment method, select ‘GitHub’ and search for the project’s repository from the list.
+3. Select and then click on ‘Deploy Branch’.
+4. When the build log is complete it should say that the app has been successfully deployed.
+5. Click on the ‘Open App’ button to view it and the Django “The install worked successfully!” page, should be displayed.
+
+#### Final Deployment
+
+1. Set Debug to False.
+2. Commit and push your code to your project's repository.
+3. Navigate to the 'Deploy' tab and scroll down to 'Deploy a GitHub branch'.
+4. Select the branch you want to deploy and click on the 'Deploy branch' button. When the app is deployed, you should see a message in the built log saying "Your app was successfully deployed". Click 'View' to see the deployed app in the browser. Alternatively, you can click on the 'Open App' button at the top of the page.
+
+</details>
 
 [Back to top](#table-of-contents)
 
