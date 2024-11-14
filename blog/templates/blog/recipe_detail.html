@@ -8,8 +8,8 @@
 {% block content %}
 <div class="container-fluid opacity">
     <div class="row text-center container-fluid">
-        <div class="col-md-6 opacity">
-            <h3>{{ recipe.title }}</h3>
+        <div class="col-md-12 col-lg-6 opacity">
+            <h3 class="mt-3">{{ recipe.title }}</h3>
             <p>Created By: <span>{{ recipe.author }} | {{ recipe.created_on }}</span></p>
             <p class="{% if recipe.author != user %} d-none{% endif%}">
                 <a href="{% url 'edit_recipe' recipe.slug %}" class="btn btn-success btn-sm rounded-0"
@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 mt-3 align-self-center">
+        <div class="col-md-12 col-lg-6 mt-3 align-self-center">
             {% if "placeholder" in recipe.image.url %}
             <img class="recipe-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
             {% else %}
@@ -44,7 +44,7 @@
     <div class="row">
         <div class="col-12">
             <strong>
-                <i class="fa-solid fa-comments coloredIcon mb-3"></i> {{ comment_count }}
+                <i class="fa-solid fa-comments coloredIcon mt-3"></i> {{ comment_count }}
             </strong>
             <div class="col-12 {% if not user.is_authenticated == False %}d-none{% endif%}">
                 Login to view comments and interact.
