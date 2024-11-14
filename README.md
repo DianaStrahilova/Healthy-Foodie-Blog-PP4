@@ -109,7 +109,7 @@ For future goals I would like to add a User Profile page.
       - Each recipe can have multiple comments.
       - Each user can perform multiple intercations.
 
-      ![](./static/readme-images/models.png)
+      ![](./static/readme-images/database-schema.png)
 
 
    #### Colour Scheme 
@@ -158,14 +158,18 @@ For future goals I would like to add a User Profile page.
    ![](./static/readme-images/home-page.png)
 
    ### Blog Page:
-   The Blog page displays paginated list with the latest posts(recipes). Each post is displayed as a card, containing the post image, title (as a clickable link), author and the date it was created on.
+   - The Blog page displays paginated list with the latest posts(recipes). Each post is displayed as a card, containing the post image, title (as a clickable link), author and the date it was created on.
 
-    ![]() -- Blog page image ...
+   ![](./static/readme-images/recipe-list.png)
 
 
    ### Add Recipe
 
-  Only registered users can add recipes. All recipes must first be approved by the admin.
+  - Only registered users can add recipes. All recipes must first be approved by the admin.
+  - The recipe page consists of the recipe model form including summernote fields so the user could customise their recipes.
+  - When users click on the 'Add Recipe' button, they get an alert 'Your recipe will be submitted for aopproval'.
+  - The form is consistent with the website's style.
+  - If image isn't upladed, there is a default image.
 
   ![](./static/readme-images/add-recipe.png)
 
@@ -175,6 +179,8 @@ For future goals I would like to add a User Profile page.
    #### Recipe Detail View:
 
    By clicking on the title link, the user is taken to the full recipe page, where they can see the full content of the recipe.
+   - Only logged in users can view the comment section.
+   - Edit/Delete buttons are only available if the user is the author of the recipe.
 
    ![](./static/readme-images/recipe-detail.png)
 
@@ -237,6 +243,8 @@ I have performed only manual testing for this project, however automated testing
 
 ### Code Validation
    #### HTML
+   HTML code was tested using the [W3C Validator](https://validator.w3.org/) via URI input.
+
    - Home Page
       - No errors returned.
 
@@ -269,26 +277,52 @@ I have performed only manual testing for this project, however automated testing
    - Login
       - No errors returned.
       ![](./static/readme-images/login-v.png)
-
-
-
-  
+   - Log Out
+       - No errors returned.
+      ![](./static/readme-images/logout-v.png)
+     
    
+   #### CSS Testing
+   CSS code was tested using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) via text input.
+   - No errors returned.
+      ![](./static/readme-images/css-v.png)
+
+   
+   #### Python 
+   Python code was tested using [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
+
+   - settings.py
+
+   Line too long warning for lines: 115, 124, 127, 130, 133. I did not make any alterations as it is Django code.
+
+   ![](./static/readme-images/pep-8.png)
+
+   - urls.py
+
+   ![](./static/readme-images/urls-v.png)
+
+   - admin.py
+
+   ![](./static/readme-images/admin-v.png)
+
+   - forms.py 
+
+   ![](./static/readme-images/forms.png)
+
+   - models.py
+
+   ![](./static/readme-images/models-v.png)
+
+   - views.py
+
+   ![](./static/readme-images/views.png)
 
 
+   #### Lighthouse Testing
+   [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used to audit the website for performance, accessibility, best practices and SEO. It was run in Chrome DevTools in incognito mode.
 
-  
+   ![](./static/readme-images/lighthouse.png)
 
-
-
-
-## Testing 
-
-### Validator Testing 
-- [CI PEP8 Online](https://pep8ci.herokuapp.com/).
-    - No errors were returned.
-
-<img src="" height="432" width="720">
 
 
 ### Bugs

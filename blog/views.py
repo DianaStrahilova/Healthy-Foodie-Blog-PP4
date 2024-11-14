@@ -10,11 +10,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django import forms
 
 
-# Create your views here.
-
 # Home view
 class Index(TemplateView):
     template_name = 'blog/index.html'
+
 
 # Recipe list view
 class RecipeView(ListView):
@@ -22,6 +21,7 @@ class RecipeView(ListView):
     template_name = 'blog/recipes.html'
     context_object_name = 'recipes'
     paginate_by = 6
+
 
 # Recipe detail view
 def recipe_detail(request, slug):
@@ -54,6 +54,7 @@ def recipe_detail(request, slug):
         },
     )
 
+
 # Edit comment
 def comment_edit(request, slug, comment_id):
     if request.method == "POST":
@@ -76,6 +77,7 @@ def comment_edit(request, slug, comment_id):
 
     return HttpResponseRedirect(reverse('recipe', args=[slug]))
 
+
 # Delete comment
 def comment_delete(request, slug, comment_id):
     """
@@ -91,6 +93,7 @@ def comment_delete(request, slug, comment_id):
 
     return HttpResponseRedirect(reverse('recipe', args=[slug]))
 
+
 # Add recipe
 class AddRecipe(LoginRequiredMixin, CreateView):
     template_name = 'blog/add_recipe.html'
@@ -102,6 +105,7 @@ class AddRecipe(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         return super(AddRecipe, self).form_valid(form)
 
+
 # Edit recipe
 class EditRecipe(UpdateView):
     """ Edit a recipe """
@@ -110,10 +114,10 @@ class EditRecipe(UpdateView):
     form_class = RecipeForm
     success_url = '/recipes/'
 
+
 # Delete recipe
 class DeleteRecipe(DeleteView):
     template_name = 'blog/delete_recipe.html'
     model = Recipe
     success_url = '/recipes/'
-
 
