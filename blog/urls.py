@@ -3,6 +3,9 @@ from django.urls import path
 from .views import Index, RecipeView, AddRecipe, EditRecipe, DeleteRecipe
 from django.views import generic
 
+""" 
+URL patterns for the Blog Application
+"""
 
 urlpatterns = [
     path('', Index.as_view(), name='home'),

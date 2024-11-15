@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'django_summernote',
 
-    # Apps
     'blog',
     'cloudinary',
     'cloudinary_storage',
@@ -63,7 +62,7 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-
+# Summernote Config
 SUMMERNOTE_CONFIG = {
     'summernote': {
      'toolbar': [['undo', ['undo', ]],
@@ -73,8 +72,6 @@ SUMMERNOTE_CONFIG = {
                  ['fontsize', ['fontsize', ]],
                  ['color', ['color']],
                  ['para', ['ul', 'ol', 'paragraph']], ],
-    # 'width': 550,
-    # 'height': 400,
     'focus': True,
     'fontSizes': ['8', '9', '10', '11', '12', '14', '18', '22', '24', '36',
                    '48', '64', '82', '150'],

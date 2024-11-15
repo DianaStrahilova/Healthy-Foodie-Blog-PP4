@@ -2,7 +2,7 @@
 
 ![](./static/readme-images/responsive.png)
 
-Healthy Foodie blog is a space for healthy food lovers to explore, create, share and enjoy meals. Only registered users can add recipes and add comments.
+Healthy Foodie blog is a space for healthy food lovers to explore, create, share and enjoy meals. Only registered users can add recipes and comments.
 
 
 - Live Website [Healthy Foodie](https://healthy-foodie-eea32bb0021f.herokuapp.com/)
@@ -33,6 +33,7 @@ Healthy Foodie blog is a space for healthy food lovers to explore, create, share
    - [Update View/Delete View](#update-view--delete-view)
       - [Edit Recipe](#edit-recipe)
       - [Delete Recipe](#delete-recipe)
+   - [Admin Panel](#admin-panel)
    - [Register](#register)
    - [Sign In](#sign-in)
    - [Sign Out](#sign-out)
@@ -58,12 +59,12 @@ Healthy Foodie blog is a space for healthy food lovers to explore, create, share
 
 ## Agile Methodology
 
-The plan for this website was carried out using Agine Methodology. GitHub Issues, which can be viewed [here](https://github.com/DianaStrahilova/Healthy-Foodie-Blog-PP4/issues?q=is%3Aissue+is%3Aclosed).
+The plan for this website was carried out using Agile Methodology. GitHub Issues can be viewed [here](https://github.com/DianaStrahilova/Healthy-Foodie-Blog-PP4/issues?q=is%3Aissue+is%3Aclosed).
 
 Each User Story contains Acceptance Criteria and Tasks. I had to add an extra user story after I initially created them.
 Since this was my first project using Agile and Django, it was very challenging. Some of the tasks were completed faster than anticipated, while others took much longer.
 
-After all, I found using the Agile Methodology of a benefit, as it helped me organize the development of the project.
+After all, I found using the Agile Methodology a benefit, as it helped me organize the development of the project.
 
 ## UX
 ### Site Purpose:
@@ -109,10 +110,12 @@ What user would expect from interecting with the website.
 [Back to top](#table-of-contents)
 
 ## Design
-     
+   <img src="./static/readme-images/logo.png" height="100" width="400">
+
+
   The website is responsive on screens from 320px and up.
 
-  The Navigation Menu displays the Healthy Foodie logo and a hamburger button (on smaller devices) with links to the Home, Blog, Add Recipe. Register and Login only if user isn't logged in. And logout when user is logged in.
+  The Navigation Menu displays the Healthy Foodie logo (which is also a link to the home page) and a hamburger button (on smaller devices) with links to the Home, Blog, Add Recipe. Register and Login available only if user isn't logged in. And logout when user is logged in.
 
   Users can add a recipe or leave comments only if they're logged in.
 
@@ -122,7 +125,7 @@ What user would expect from interecting with the website.
 
   - The database schema for this project is one-to-many. 
       - Each recipe can have multiple comments.
-      - Each user can perform multiple intercations.
+      - Each user can perform multiple interactions.
 
       ![](./static/readme-images/database-schema.png)
 
@@ -151,14 +154,14 @@ What user would expect from interecting with the website.
 
    - A link to the Logo which brings the user to the home page.
    - A hamburger button on mobile which opens up a navigation list with links to Home, Blog, Add Recipe, Logout when user is logged in.
-   - When user is not logged in Home, Blog, Add Recipe, Register, Login. If user clicks Add Recipe, in this case will be redirected to the register page.
+   - When user is not logged in: Home, Blog, Add Recipe, Register, Login. If user clicks Add Recipe, in this case will be redirected to the register page.
    
    ### Footer
    Featured on all pages, the fully responsive footer includes:
 
    - Social Media Links.
    - Social links open in a new tab so that users are not directed away from the website.
-   - A Simple Copyright disclaimer shown at the bottom of the footer.
+   - Copyright disclaimer shown at the bottom of the footer.
    - All links have a pointer cursor to help users identify them as links.
 
 
@@ -182,9 +185,8 @@ What user would expect from interecting with the website.
 
   - Only registered users can add recipes. All recipes must first be approved by the admin.
   - The recipe page consists of the recipe model form including summernote fields so the user could customise their recipes.
-  - When users click on the 'Add Recipe' button, they get an alert 'Your recipe will be submitted for aopproval'.
   - The form is consistent with the website's style.
-  - If image isn't upladed, there is a default image.
+  - There is a default image, if one isn't uploaded.
 
   All uploaded images are stored in [Cloudinary](https://cloudinary.com/)
 
@@ -195,7 +197,8 @@ What user would expect from interecting with the website.
 
    #### Recipe Detail View:
 
-   By clicking on the title link, the user is taken to the full recipe page, where they can see the full content of the recipe.
+   By clicking on the title link, the user is taken to the recipe detail page, where they can see the full content of the recipe.
+   - Count of comments is displayed.
    - Only logged in users can view the comment section.
    - Edit/Delete buttons are only available if the user is the author of the recipe.
 
@@ -208,14 +211,15 @@ What user would expect from interecting with the website.
       - Non regitered users cannot view the comment section.
       - Registered users can view and post comments.
       - Registered users can edit or delete their comments. 
-      - If comment is not approved, it is only visible to it's author and contains a 'Pending' badge. Once it's approved, the badge is gone.
+      - If comment is not approved, it is only visible to it's author and contains a 'Pending' badge. Once it's approved, the badge is gone and is visible to all logged in users.
       - Logged in users can edit and delete their own comments.
+      - A message on successfull Edit/Detele/Update shown underneath Navbar.
 
    ![](./static/readme-images/comments.png)
 
 
    ### Update View / Delete View
-   Detail recipe view contains edit and delete buttons only available to it's author. They lead to the relevant pages for edit/delete.
+   Detail recipe view contains 'Edit' and 'Delete' buttons only available to it's author. They lead to the relevant pages for edit/delete.
 
    <img src="./static/readme-images/edit-delete.png" height="140" width="400">
 
@@ -237,7 +241,7 @@ What user would expect from interecting with the website.
 
    ### Register 
 
-   - The fully responsive registration form can be accessed from the navigation bar or when non-registered/logged in  user clicks on 'Add recipe' link.
+   - The fully responsive registration form can be accessed from the navigation bar or when non-registered/logged in user clicks on 'Add recipe' link.
    - It uses django-allouth to provide all the settings for user authentication and includes the fields below:
       - Username(unique)
       - Email (optional)
@@ -250,7 +254,7 @@ What user would expect from interecting with the website.
 
   ### Sign In 
   The sign in form can be accessed from the navigation bar.
-   - It includes a welcome message and a link to the Register form for user who have not registered yet.
+   - It includes a welcome message and a link to the Register form for users who have not registered yet.
    - A message on successful sign in  shown underneath Navbar.
    - It uses django-allouth to provide all the settings for user authentication and includes the fields below:
       - Username
@@ -273,11 +277,30 @@ What user would expect from interecting with the website.
  The 404 page is displayed when user tries to reach a non-existent page on the website. 
  ![](./static/readme-images/404.png)
 
+ ### Admin Panel 
+ The website offers the owner the functionality to view and interact with the database in Django Admin Panel.
+
+ - The panel is reachable by typine /admin/ at the end of the URL.
+ - Which brings the user to the administration login page. Only users with Superuser status can log in.
+ - The Superuser can approve or disapprove each post/comment before it's added on the website.
+ - The Superuser has permissions to view, add, change, delete anything that has been added to the database.
+
+   - Django Administration
+      ![](./static/readme-images/administration.png)
+
+   - Django Administration for Recipe
+      ![](./static/readme-images/recipes.png)
+
+   - Django Administration for Comment 
+      ![](./static/readme-images/comments-admin.png)
+
+
+
 [Back to top](#table-of-contents)
 
 ## Testing 
 
-I have performed only manual testing for this project, however automated testing will be considered or implemented in future.
+Only manual testing was performed on this project, however automated testing will be considered or implemented in future.
 
 ### Code Validation
    #### HTML
@@ -315,6 +338,7 @@ I have performed only manual testing for this project, however automated testing
    - Login
       - No errors returned.
       ![](./static/readme-images/login-v.png)
+
    - Log Out
        - No errors returned.
       ![](./static/readme-images/logout-v.png)
@@ -361,15 +385,17 @@ I have performed only manual testing for this project, however automated testing
 
    ![](./static/readme-images/lighthouse.png)
 
+   #### Browser Compatibility
 
+   Website was tested in Chrome and Safari on Laptop, Iphone and Ipad. It is fully responsive.
 
 ### Bugs
 
-- When I initially made the Recipe model I didn't include a slug field. Later on while I was creating the recipe detail view I decided I need to add it to the model. After adding it I encountered 'slug already exists' error, because I already had data in the database. Tried adding the slugfield as 'Description' field on 'Add Recipe' and it worked for a while until it started showing the same error again. After trying a lot of different ways to implement it, I came across [this article](https://stackoverflow.com/questions/29293096/change-slug-in-django-use-slugify) on [StackOverflow](https://stackoverflow.com/) and realised it is my mistake because I had it set to unique. I changed it up and on approval I can create the slug.
+- When I initially made the Recipe model I didn't include a slug field. Later on while I was creating the recipe detail view I decided I need to add it to the model. After adding it I encountered 'slug already exists' error, because I already had data in the database. Tried adding the slugfield as 'Description' field in 'Add Recipe' and it worked for a while until it started showing the same error again. After trying a lot of different ways to implement it, I came across [this article](https://stackoverflow.com/questions/29293096/change-slug-in-django-use-slugify) on [StackOverflow](https://stackoverflow.com/) and realised it is my mistake because I had it set to unique. I changed it up and on approval I can create the slug.
 
-- Got a lot of 'Template Not Found' error, which was also my mistake as I had set the project name instead to the app name.
+- Got a lot of 'Template Not Found' error, which was also my mistake as I had set the project name template path instead to the app.
 - Bootstrap5 CSS is used for this project, however later on in the development I have noticed the jquery and npm script tags are two different versions. When I change to different versions, my navbar would not collapse. Left it as it is.
-- CSS style sheet was not updating even after hard refreshing. [This article](https://stackoverflow.com/questions/52682812/django-css-not-updating) helped me to fix it.
+- CSS style sheet was not updating even after hard refreshing. [This article](https://stackoverflow.com/questions/52682812/django-css-not-updating) helped me fix it.
 
 
 
@@ -400,12 +426,13 @@ I have performed only manual testing for this project, however automated testing
 - [django-summernote==0.8.20.0](https://pypi.org/project/django-summernote/) - Summernote is a JavaScript library that helps you create WYSIWYG editors with a simple and easy-to-use interface.
 - [Cloudinary](https://cloudinary.com/) - To store the uploaded images.
 - [django-crispy-forms==2.3](https://django-crispy-forms.readthedocs.io/en/latest/) - To safely render the django forms. 
+- [Django Messages](https://docs.djangoproject.com/en/5.1/ref/contrib/messages/) - To display messages to the user.
 
 
 ### Tools 
 - [GitHub](https://github.com/) - To store the repository for submission.
 - [GitPod](https://www.gitpod.io/) - As coding environment.
-- [Code Institute template](https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python) for GitPod and this README.
+- [Code Institute template](https://github.com/Code-Institute-Org/ci-full-template) for GitPod and this README.
 - [Am I Responsive](https://ui.dev/amiresponsive) - For responsive visuals of the website.
 - [W3C Validator](https://validator.w3.org/) - A validator which checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.
 - [W3C CSS Validation Service ](https://jigsaw.w3.org/css-validator/) - A validator which checks the validity of CSS code.
@@ -589,12 +616,12 @@ Have a Cloudinary accoount.
  - [Django Views](https://docs.djangoproject.com/en/5.1/ref/class-based-views/generic-editing/).
  - [Summernote](https://summernote.org/deep-dive/#google_vignette).
  - [Stack Overflow](https://stackoverflow.com/).
- - [ChatGPT](https://chatgpt.com/) - for documentation.
+ - [ChatGPT](https://chatgpt.com/).
 
  #### Media 
   <details>
 
-<summary>Recipes</summary>
+<summary>Recipes | Click here </summary>
 
 #### Recipes and images currently on the website
 
@@ -604,11 +631,11 @@ Have a Cloudinary accoount.
 - [Banana Waffles Image](https://healthfulblondie.com/flourless-banana-oat-waffles/)
 - [Overnight Oats](https://feelgoodfoodie.net/recipe/overnight-oats/)
 - [Banana Bread](https://www.bbcgoodfood.com/recipes/brilliant-banana-loaf)
-- Meatballs is a credit to my mentor.
+- [Meatballs](https://healthy-foodie-eea32bb0021f.herokuapp.com/recipes/meatballs/) is a credit to my mentor.
 
 </details>
 
-
+- Live Website [Healthy Foodie](https://healthy-foodie-eea32bb0021f.herokuapp.com/)
 
 ## Acknowledgements
 

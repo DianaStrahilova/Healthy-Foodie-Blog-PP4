@@ -27,7 +27,6 @@ body {
     margin-left: 10px;
 }
 
-
 .lead {
     padding: 10px;
     line-height: 2.5rem;
@@ -95,12 +94,10 @@ body {
     color: #FFFF80;
 }
 
-
 .recipe-image {
     height: 80%;
     width: 80%;
     border-radius: 15px;
-
 }
 
 .card-body {

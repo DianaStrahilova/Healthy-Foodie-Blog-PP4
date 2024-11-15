@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
-
+/* General body styles */
 body {
     font-family: "Roboto Mono", sans-serif;
     min-height: 100vh;
@@ -15,6 +15,7 @@ body {
     height: auto;
 }
 
+
 /* Navbar */
 .active {
     background-color: #FFD700;
@@ -25,7 +26,6 @@ body {
     font-size: 2rem;
     margin-left: 10px;
 }
-
 
 .lead {
     padding: 10px;
@@ -42,6 +42,9 @@ body {
     background-color: tomato;
 }
 
+.navbar-toggler {
+    border: 2px solid tomato;
+}
 
 
 /* Home Page */
@@ -73,6 +76,7 @@ body {
     color: black;
 }
 
+
 /* Recipe List */
 .card-img-top {
     width: 100%;
@@ -90,12 +94,10 @@ body {
     color: #FFFF80;
 }
 
-
 .recipe-image {
     height: 80%;
     width: 80%;
     border-radius: 15px;
-
 }
 
 .card-body {
@@ -118,6 +120,7 @@ a.page-link:hover {
     border: #FFD700;
     color: tomato;
 }
+
 
 /* Comment Section */
 div.scroll {
@@ -154,7 +157,6 @@ div.commentDisplay,
 }
 
 
-
 /* Add Recipe Page */
 .recipeForm {
     background-color: #FFD700;
@@ -163,17 +165,14 @@ div.commentDisplay,
 }
 
 .recipeButton:hover {
-    background-color: #FFD700;
+    background-color: #FFFF80;
     border: 2px solid tomato;
 }
-
 
 #id_ingredients_iframe,
 #id_instructions_iframe {
     width: 100%;
 }
-
-
 
 
 /* Recipe Detail */
@@ -192,9 +191,7 @@ div.card {
 img.styledImage {
     height: 550px;
     width: 500px;
-    
 }
-
 
 
 /* Footer */
@@ -217,8 +214,6 @@ footer,
 }
 
 
-
-
 /* Media queries */
 @media only screen and (max-width: 770px) {
     div .image-container img {
@@ -237,13 +232,9 @@ footer,
         height: fit-content;
     }
 
-    /* img.styledImage {
-        height: 500px;
-        width: 400px
-    } */
 }
 
-@media only screen and (max-width: 499px) {
+@media only screen and (max-width: 579px) {
     img.styledImage {
         height: 400px;
         width: 300px;
