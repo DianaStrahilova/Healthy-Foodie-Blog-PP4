@@ -94,10 +94,10 @@ What user would expect from interecting with the website.
 #### As a site user:
 - As a Site User, I can register an account so that I can view, comment and create new posts.
 - As a Site User, I can click on a post so that I can read the full text.
-- As a site user, I can create a new post so that I can share my content with other users.
-- As a site user, I can view a paginated list of posts so that I can select which post I want to view.
+- As a Site user, I can create a new post so that I can share my content with other users.
+- As a Site user, I can view a paginated list of posts so that I can select which post I want to view.
 - As a Site User, I can modify or delete my posts so that I can manage my content.
-- As a site user, I can I can leave comments on a post so that I can be involved in the conversation.
+- As a Site user, I can I can leave comments on a post so that I can be involved in the conversation.
 - As a Site User, I can modify or delete my comment on a post so that I can be involved in the conversation.
 
 
@@ -171,7 +171,7 @@ What user would expect from interecting with the website.
 
    ### Landing Page:
 
-   The Home page includes a heading with the blog name. It engages the user to join and share their recipes. Includes links to Sign Up and Add Recipe pages.
+   The Home page includes a heading with the blog name. It engages the user to join and share their content. Includes links to Sign Up and Add Recipe pages.
 
    ![](./static/readme-images/home-page.png)
 
@@ -208,12 +208,13 @@ What user would expect from interecting with the website.
    #### Comment Section
    The detail view page also contains a scroll with the comments for the relevant recipe and a comment form to leave a comment.
    It has a full CRUD functionality.
-      - Non regitered users cannot view the comment section.
-      - Registered users can view and post comments.
-      - Registered users can edit or delete their comments. 
-      - If comment is not approved, it is only visible to it's author and contains a 'Pending' badge. Once it's approved, the badge is gone and is visible to all logged in users.
-      - Logged in users can edit and delete their own comments.
-      - A message on successfull Edit/Detele/Update shown underneath Navbar.
+
+   - Non regitered users cannot view the comment section.
+   - Registered users can view and post comments.
+   - Registered users can edit or delete their comments. 
+   - If comment is not approved, it is only visible to it's author and contains a 'Pending' badge. Once it's approved, the badge is gone and is visible to all logged in users.
+   - Logged in users can edit and delete their own comments.
+   - A message on successfull Edit/Detele/Update shown underneath Navbar.
 
    ![](./static/readme-images/comments.png)
 
@@ -380,7 +381,7 @@ Only manual testing was performed on this project, however automated testing wil
    ![](./static/readme-images/views.png)
 
 
-   #### Lighthouse Testing
+   #### Lighthouse
    [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used to audit the website for performance, accessibility, best practices and SEO. It was run in Chrome DevTools in incognito mode.
 
    ![](./static/readme-images/lighthouse.png)
@@ -394,7 +395,9 @@ Only manual testing was performed on this project, however automated testing wil
 - When I initially made the Recipe model I didn't include a slug field. Later on while I was creating the recipe detail view I decided I need to add it to the model. After adding it I encountered 'slug already exists' error, because I already had data in the database. Tried adding the slugfield as 'Description' field in 'Add Recipe' and it worked for a while until it started showing the same error again. After trying a lot of different ways to implement it, I came across [this article](https://stackoverflow.com/questions/29293096/change-slug-in-django-use-slugify) on [StackOverflow](https://stackoverflow.com/) and realised it is my mistake because I had it set to unique. I changed it up and on approval I can create the slug.
 
 - Got a lot of 'Template Not Found' error, which was also my mistake as I had set the project name template path instead to the app.
-- Bootstrap5 CSS is used for this project, however later on in the development I have noticed the jquery and npm script tags are two different versions. When I change to different versions, my navbar would not collapse. Left it as it is.
+
+- Bootstrap5 CSS is used for this project, however later on in the development I have noticed the jquery and npm script tags are two different versions. When I change them, my navbar would not collapse. Left it as it is.
+
 - CSS style sheet was not updating even after hard refreshing. [This article](https://stackoverflow.com/questions/52682812/django-css-not-updating) helped me fix it.
 
 
@@ -442,7 +445,7 @@ Only manual testing was performed on this project, however automated testing wil
 - [Coolors](https://coolors.co/) - Colour Palette Generator.
 - [Google Fonts](https://fonts.google.com/) - Fonts.
 - [DrawSql](https://drawsql.app/) - For creating the database schema.
-- [Favicon Generator](https://favicon.io/favicon-converter/) - to generate the favicon.
+- [Favicon Generator](https://favicon.io/favicon-converter/) - To generate the favicon.
 
 
 
@@ -635,7 +638,10 @@ Have a Cloudinary accoount.
 
 </details>
 
-- Live Website [Healthy Foodie](https://healthy-foodie-eea32bb0021f.herokuapp.com/)
+
+
+
+Live Website [Healthy Foodie](https://healthy-foodie-eea32bb0021f.herokuapp.com/)
 
 ## Acknowledgements
 

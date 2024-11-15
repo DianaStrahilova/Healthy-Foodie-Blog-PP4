@@ -221,7 +221,7 @@ footer,
     }
 
     div .card {
-        width: 90%;
+        width: 80%;
     }
 
     .recipeForm {
@@ -238,5 +238,9 @@ footer,
     img.styledImage {
         height: 400px;
         width: 300px;
+    }
+
+    div .card {
+        width: 100%;
     }
 }
