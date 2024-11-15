@@ -51,6 +51,8 @@ Healthy Foodie blog is a space for healthy food lovers to explore, create, share
    - [Tools](#tools)
 - [Deployment](#deployment)
 - [Credits](#credits)
+- [Media](#media)
+- [Acknowledgements](#acknowledgements)
 
 
 
@@ -271,6 +273,7 @@ What user would expect from interecting with the website.
  The 404 page is displayed when user tries to reach a non-existent page on the website. 
  ![](./static/readme-images/404.png)
 
+[Back to top](#table-of-contents)
 
 ## Testing 
 
@@ -412,6 +415,7 @@ I have performed only manual testing for this project, however automated testing
 - [Coolors](https://coolors.co/) - Colour Palette Generator.
 - [Google Fonts](https://fonts.google.com/) - Fonts.
 - [DrawSql](https://drawsql.app/) - For creating the database schema.
+- [Favicon Generator](https://favicon.io/favicon-converter/) - to generate the favicon.
 
 
 
@@ -420,6 +424,7 @@ I have performed only manual testing for this project, however automated testing
 - [Font Awesome](https://fontawesome.com/) - Icons
 - [Free Images](https://www.freeimages.com/) - For the default upload image.
 - [CleanPNG](https://www.cleanpng.com/) - For the background image of the website.
+- [PNGWing](https://www.pngwing.com/#google_vignette) - favicon.
 
 
 
@@ -567,7 +572,6 @@ Have a Cloudinary accoount.
 
 </details>
 
-[Back to top](#table-of-contents)
 
 ## Credits 
 #### Code
@@ -600,20 +604,18 @@ Have a Cloudinary accoount.
 - [Banana Waffles Image](https://healthfulblondie.com/flourless-banana-oat-waffles/)
 - [Overnight Oats](https://feelgoodfoodie.net/recipe/overnight-oats/)
 - [Banana Bread](https://www.bbcgoodfood.com/recipes/brilliant-banana-loaf)
+- Meatballs is a credit to my mentor.
 
-<details>
-
-
-
- 
+</details>
 
 
-
-[Back to top](#table-of-contents)
 
 ## Acknowledgements
 
-
+- To my awesome new mentor, Richard Wells! For being such a fantastic mentor, for the guidance, support and advice.
 
 [Back to top](#table-of-contents)
+
+
+
 
