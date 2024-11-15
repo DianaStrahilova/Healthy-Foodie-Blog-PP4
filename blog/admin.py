@@ -26,8 +26,7 @@ class CommentAdmin(SummernoteModelAdmin):
         'body',
         'recipe',
         'created_on',
-        'status',
-
+        'approved',
     )
-    list_filter = ['created_on']
+    list_filter = ['approved','created_on']
 
