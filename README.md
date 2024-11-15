@@ -50,10 +50,8 @@ Healthy Foodie blog is a space for healthy food lovers to explore, create, share
    - [Libraries and Frameworks](#libraries-and-frameworks)
    - [Tools](#tools)
 - [Deployment](#deployment)
-
-
-
 - [Credits](#credits)
+
 
 
 ## Agile Methodology
@@ -366,8 +364,10 @@ I have performed only manual testing for this project, however automated testing
 
 - When I initially made the Recipe model I didn't include a slug field. Later on while I was creating the recipe detail view I decided I need to add it to the model. After adding it I encountered 'slug already exists' error, because I already had data in the database. Tried adding the slugfield as 'Description' field on 'Add Recipe' and it worked for a while until it started showing the same error again. After trying a lot of different ways to implement it, I came across [this article](https://stackoverflow.com/questions/29293096/change-slug-in-django-use-slugify) on [StackOverflow](https://stackoverflow.com/) and realised it is my mistake because I had it set to unique. I changed it up and on approval I can create the slug.
 
-- I also got a lot of 'Template Not Found' error, which was also my mistake as I had set the project name instead to the app name.
-- I am using Bootstrap5 CSS, however later on in the development I have noticed the jquery and npm script tags are two different versions. When I change to different versions, my navbar would not collapse. Left it as it is.
+- Got a lot of 'Template Not Found' error, which was also my mistake as I had set the project name instead to the app name.
+- Bootstrap5 CSS is used for this project, however later on in the development I have noticed the jquery and npm script tags are two different versions. When I change to different versions, my navbar would not collapse. Left it as it is.
+- CSS style sheet was not updating even after hard refreshing. [This article](https://stackoverflow.com/questions/52682812/django-css-not-updating) helped me to fix it.
+
 
 
 ### Remaining Bugs
@@ -420,7 +420,6 @@ I have performed only manual testing for this project, however automated testing
 - [Font Awesome](https://fontawesome.com/) - Icons
 - [Free Images](https://www.freeimages.com/) - For the default upload image.
 - [CleanPNG](https://www.cleanpng.com/) - For the background image of the website.
-- Recipes and Images
 
 
 
@@ -571,13 +570,42 @@ Have a Cloudinary accoount.
 [Back to top](#table-of-contents)
 
 ## Credits 
+#### Code
+ The following walkthroughs helped me shape my project.
+
+ - Code Institute's "I Think Therefore I Am Blog" which is found in the CI's LMS for the Diploma in Software Development.
+ - CodingEntrepreneurs - [Class Based Views - CreateView and UpdateView](https://www.youtube.com/watch?v=KB_wDXBwhUA&list=PLEsfXFp6DpzTD1BD1aWNxS2Ep06vIkaeW&index=38).
+ - Dee Mc's -  [How to create a recipe blog](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy)
+ - Dave Gray - [Python Django Pages, URLs & Slugs](https://www.youtube.com/watch?v=csmEzyVeRIE&t=737s).
+
+ Pages I referred to a lot:
+ - [Django Documentation](https://docs.djangoproject.com/en/5.1/).
+ - [Django Crispy Forms Docs](https://django-crispy-forms.readthedocs.io/en/latest/).
+ - [Bootstrap Docs](https://getbootstrap.com/docs/4.1/getting-started/introduction/).
+ - [Django Views](https://docs.djangoproject.com/en/5.1/ref/class-based-views/generic-editing/).
+ - [Summernote](https://summernote.org/deep-dive/#google_vignette).
+ - [Stack Overflow](https://stackoverflow.com/).
+ - [ChatGPT](https://chatgpt.com/) - for documentation.
+
+ #### Media 
+  <details>
+
+<summary>Recipes</summary>
+
+#### Recipes and images currently on the website
+
+- [Strawberry Banana Smoothie](https://downshiftology.com/recipes/strawberry-banana-smoothie/)
+- [Oatmeal Cookies](https://www.loveandlemons.com/oatmeal-cookies/)
+- [Salmon Bowl](https://www.deliciousmagazine.co.uk/recipes/salmon-and-avocado-rice-bowl/)
+- [Banana Waffles Image](https://healthfulblondie.com/flourless-banana-oat-waffles/)
+- [Overnight Oats](https://feelgoodfoodie.net/recipe/overnight-oats/)
+- [Banana Bread](https://www.bbcgoodfood.com/recipes/brilliant-banana-loaf)
+
+<details>
 
 
 
-- 
-- 
-- 
-- 
+ 
 
 
 

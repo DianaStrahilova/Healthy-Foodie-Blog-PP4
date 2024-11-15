@@ -113,7 +113,7 @@ class EditRecipe(UpdateView):
     model = Recipe
     form_class = RecipeForm
     success_url = '/recipes/'
-
+    
 
 # Delete recipe
 class DeleteRecipe(DeleteView):

@@ -18,4 +18,16 @@ class RecipeAdmin(SummernoteModelAdmin):
     summernote_fields = ('instructions', 'ingredients')
 
 
-admin.site.register(Comment)
+# admin.site.register(Comment)
+@admin.register(Comment)
+class CommentAdmin(SummernoteModelAdmin):
+    list_display = (
+        'author',
+        'body',
+        'recipe',
+        'created_on',
+        'status',
+
+    )
+    list_filter = ['created_on']
+
